@@ -1,0 +1,835 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Query results &#8212; Example PRObs system</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/system-definitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Indices" href="indices.html" />
+    <link rel="prev" title="Object definitions" href="object_definitions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Example PRObs system</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Example PRObs system definitions
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasources.html">
+   Data sources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="object_definitions.html">
+   Object definitions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Query results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="indices.html">
+   Indices
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/query_results.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/query_results.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/query_results.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retrieve-original-data-points">
+   Retrieve original data points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inferred-observations">
+   Inferred observations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-aggregation">
+   Further aggregation
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="query-results">
+<h1>Query results<a class="headerlink" href="#query-results" title="Permalink to this headline">¶</a></h1>
+<p>Load libraries and SPARQL queries, and send them to RDFox to be answered against the pre-converted data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">probs_ontology.runner.probs_runner</span> <span class="kn">import</span> <span class="n">probs_query_data</span>
+
+<span class="n">queries</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">stem</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;queries&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.rq&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">probs_query_data</span><span class="p">(</span><span class="s2">&quot;../data/probs_data.nt.gz&quot;</span><span class="p">,</span> <span class="n">queries</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obs_short_labels</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;https://ukfires.org/probs/ontology/data/bgs/Observation-29cc1ee823612f1307925b7c5b003feb9668a06cb991da0b6b9af30033fde2a0&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;https://ukfires.org/probs/ontology/ComposedInferredObservation--7af16db03ac2ac2a9a773645b069b7dacffa239f5b98b9887fa4a0323b787ce7&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-0cefb7bea0582e08d7878e4c3f684c2307edb305bfddd5e3ea6f3efb8f9b02c1-d92d8d1a049b5c171ed7dfde5057cddf9984bb5fdd104af98b622c1be88800a7&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;https://ukfires.org/probs/ontology/data/bgs/Observation-c2bb6910b2b19133e460750a4dd799924afd9c4aceae0736aea91635592cd1ff&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 4&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-00613791c18e3cf39874c66a176e7229189e5fed28a45ef7921e3f97e9143eab-e9398b5c9aa49bcd1b2f0dc8fa74b41a9faa021848620496ad682721f2cf9a27&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 5&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-00613791c18e3cf39874c66a176e7229189e5fed28a45ef7921e3f97e9143eab-e53dd7ea6154ae201c77e77a2b7260c5304cfd12b67be85965c4089720d9fa19&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 6&quot;</span>
+<span class="p">}</span>
+<span class="k">def</span> <span class="nf">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s2">&quot;Observation&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">Observation</span> <span class="o">=</span> <span class="p">[</span><span class="n">obs_short_labels</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">Observation</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="retrieve-original-data-points">
+<h2>Retrieve original data points<a class="headerlink" href="#retrieve-original-data-points" title="Permalink to this headline">¶</a></h2>
+<p>First, let’s check we can retrieve the original data points in a consistent way. From the BGS Minerals Yearbook:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">ufpc</span><span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/prodcom/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">time</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?Object</span> <span class="nv">?Year</span> <span class="nv">?Value</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">partOfDataset</span> <span class="nn">ufpc</span><span class="p">:</span><span class="nt">BGSMineralsYearbook2015</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">objectDefinedBy</span> <span class="p">[</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?Object</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">hasTimePeriod</span> <span class="p">[</span> <span class="nn">time</span><span class="p">:</span><span class="nt">year</span> <span class="nv">?Year</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">measurement</span> <span class="nv">?Value</span> <span class="p">.</span>
+  <span class="k">FILTER</span><span class="p">(</span> <span class="nf">STRENDS</span><span class="p">(</span><span class="nv">?Object</span><span class="p">,</span> <span class="s">&quot;in BGS&quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?Object</span> <span class="nv">?Year</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;original_bgs&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Object</th>
+      <th>Year</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Crushed stone in BGS</td>
+      <td>2014-01-01</td>
+      <td>9.900000e+10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Igneous rock in BGS</td>
+      <td>2014-01-01</td>
+      <td>3.800000e+10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Limestone &amp; Dolomite in BGS</td>
+      <td>2014-01-01</td>
+      <td>5.300000e+10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Sand &amp; Gravel in BGS</td>
+      <td>2014-01-01</td>
+      <td>5.600000e+10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Sandstone in BGS</td>
+      <td>2014-01-01</td>
+      <td>1.000000e+10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can also retrieve an original data point from Prodcom linked to a classification code:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">time</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?Object</span> <span class="nv">?Year</span> <span class="nv">?Value</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">objectDefinedBy</span> <span class="p">[</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?Object</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">hasTimePeriod</span> <span class="p">[</span> <span class="nn">time</span><span class="p">:</span><span class="nt">year</span> <span class="nv">?Year</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">measurement</span> <span class="nv">?Value</span> <span class="p">.</span>
+  <span class="k">FILTER</span><span class="p">(</span> <span class="nv">?Object</span> <span class="o">=</span> <span class="s">&quot;PRODCOM Object from Code 08121210&quot;</span> <span class="p">)</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?Object</span> <span class="nv">?Year</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;original_prodcom&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Object</th>
+      <th>Year</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PRODCOM Object from Code 08121210</td>
+      <td>2014-01-01</td>
+      <td>24192579000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>PRODCOM Object from Code 08121210</td>
+      <td>2017-01-01</td>
+      <td>31355644000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="inferred-observations">
+<h2>Inferred observations<a class="headerlink" href="#inferred-observations" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s query for all the observations that would be relevant to modelling production of two object types, <a class="reference internal" href="object_definitions.html#object-CrushedStone" title="object-CrushedStone"><code class="xref system system-ref docutils literal notranslate"><span class="pre">CrushedStone</span></code></a> and <a class="reference internal" href="object_definitions.html#object-SandAndGravel" title="object-SandAndGravel"><code class="xref system system-ref docutils literal notranslate"><span class="pre">SandAndGravel</span></code></a>, in all years that are available. Here is the SPARQL query:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">gn</span><span class="p">:</span> <span class="nl">&lt;http://www.geonames.org/ontology#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">time</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?Observation</span> <span class="nv">?Object</span> <span class="nv">?Year</span> <span class="nv">?Bound</span> <span class="nv">?Value</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">objectDefinedBy</span> <span class="p">[</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?Object</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">hasRegion</span> <span class="p">[</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;United Kingdom&quot;</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">hasRole</span> <span class="p">:</span><span class="nt">SoldProduction</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">hasTimePeriod</span> <span class="p">[</span> <span class="nn">time</span><span class="p">:</span><span class="nt">year</span> <span class="nv">?Year</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">bound</span> <span class="nv">?Bound</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">measurement</span> <span class="nv">?Value</span> <span class="p">.</span>
+  <span class="k">FILTER</span><span class="p">(</span> <span class="nv">?Object</span> <span class="o">=</span> <span class="s">&quot;Crushed stone&quot;</span> <span class="o">||</span> <span class="nv">?Object</span> <span class="o">=</span> <span class="s">&quot;Sand &amp; Gravel&quot;</span> <span class="p">)</span>
+  <span class="k">FILTER</span><span class="p">(</span> <span class="nv">?Year</span> <span class="o">=</span> <span class="s">&quot;2014&quot;</span><span class="o">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">gYear</span> <span class="o">||</span> <span class="nv">?Year</span> <span class="o">=</span> <span class="s">&quot;2018&quot;</span><span class="o">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">gYear</span> <span class="p">)</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?Object</span> <span class="nv">?Bound</span> <span class="nv">?Year</span>
+</pre></div>
+</div>
+<p>And the results:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;object_observations&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Observation</th>
+      <th>Object</th>
+      <th>Year</th>
+      <th>Bound</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Obs 3</td>
+      <td>Crushed stone</td>
+      <td>2014-01-01</td>
+      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>101000000000.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Obs 2</td>
+      <td>Crushed stone</td>
+      <td>2014-01-01</td>
+      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>99000000000.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Obs 1</td>
+      <td>Crushed stone</td>
+      <td>2018-01-01</td>
+      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>69722551000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Obs 5</td>
+      <td>Sand &amp; Gravel</td>
+      <td>2014-01-01</td>
+      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>51010054000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Obs 4</td>
+      <td>Sand &amp; Gravel</td>
+      <td>2014-01-01</td>
+      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>56000000000.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can see where these values have come from:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">prov</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/ns/prov#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">gn</span><span class="p">:</span> <span class="nl">&lt;http://www.geonames.org/ontology#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">time</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?Observation</span> <span class="nv">?WDFObject</span> <span class="nv">?WDFValue</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">objectDefinedBy</span> <span class="p">[</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?Object</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">hasRegion</span> <span class="p">[</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;United Kingdom&quot;</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">hasRole</span> <span class="p">:</span><span class="nt">SoldProduction</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">hasTimePeriod</span> <span class="p">[</span> <span class="nn">time</span><span class="p">:</span><span class="nt">year</span> <span class="nv">?Year</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="nn">prov</span><span class="p">:</span><span class="nt">wasDerivedFrom</span> <span class="nv">?WDF</span> <span class="p">.</span>
+
+  <span class="k">FILTER</span><span class="p">(</span> <span class="nv">?Object</span> <span class="o">=</span> <span class="s">&quot;Crushed stone&quot;</span> <span class="o">||</span> <span class="nv">?Object</span> <span class="o">=</span> <span class="s">&quot;Sand &amp; Gravel&quot;</span> <span class="p">)</span>
+  <span class="k">FILTER</span><span class="p">(</span> <span class="nv">?Year</span> <span class="o">=</span> <span class="s">&quot;2014&quot;</span><span class="o">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">gYear</span> <span class="o">||</span> <span class="nv">?Year</span> <span class="o">=</span> <span class="s">&quot;2018&quot;</span><span class="o">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">gYear</span> <span class="p">)</span>
+
+  <span class="nv">?WDF</span> <span class="k">a</span> <span class="p">:</span><span class="nt">DirectObservation</span> <span class="p">;</span>
+         <span class="p">:</span><span class="nt">objectDirectlyDefinedBy</span> <span class="p">[</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?WDFObject</span> <span class="p">]</span> <span class="p">;</span>
+         <span class="p">:</span><span class="nt">measurement</span> <span class="nv">?WDFValue</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?Observation</span> <span class="nv">?WDFObject</span>
+</pre></div>
+</div>
+<p>This results in:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;prov&quot;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Observation</th>
+      <th>WDFObject</th>
+      <th>WDFValue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Obs 3</td>
+      <td>Igneous rock in BGS</td>
+      <td>38000000000.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Obs 3</td>
+      <td>Limestone &amp; Dolomite in BGS</td>
+      <td>53000000000.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Obs 3</td>
+      <td>Sandstone in BGS</td>
+      <td>10000000000.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Obs 5</td>
+      <td>PRODCOM Object from Code 08121190</td>
+      <td>26817475000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Obs 5</td>
+      <td>PRODCOM Object from Code 08121210</td>
+      <td>24192579000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Obs 1</td>
+      <td>PRODCOM Object from Code 08121230</td>
+      <td>68391115000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Obs 1</td>
+      <td>PRODCOM Object from Code 08121250</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Obs 1</td>
+      <td>PRODCOM Object from Code 08121290</td>
+      <td>1331436000</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Obs 2</td>
+      <td>Crushed stone in BGS</td>
+      <td>99000000000.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Obs 4</td>
+      <td>Sand &amp; Gravel in BGS</td>
+      <td>56000000000.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>It does indeed add up to the values shown above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Observation&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;WDFValue&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Observation</th>
+      <th>WDFValue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Obs 1</td>
+      <td>69722551000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Obs 2</td>
+      <td>99000000000.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Obs 3</td>
+      <td>101000000000.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Obs 4</td>
+      <td>56000000000.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Obs 5</td>
+      <td>51010054000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="further-aggregation">
+<h2>Further aggregation<a class="headerlink" href="#further-aggregation" title="Permalink to this headline">¶</a></h2>
+<p>We can further query for the aggregates observations of <a class="reference internal" href="object_definitions.html#object-Aggregates" title="object-Aggregates"><code class="xref system system-ref docutils literal notranslate"><span class="pre">Aggregates</span></code></a>:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">gn</span><span class="p">:</span> <span class="nl">&lt;http://www.geonames.org/ontology#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">time</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?Year</span> <span class="nv">?Bound</span> <span class="nv">?Value</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">objectDefinedBy</span> <span class="p">[</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?Object</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">hasRegion</span> <span class="p">[</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;United Kingdom&quot;</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">hasRole</span> <span class="p">:</span><span class="nt">SoldProduction</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">hasTimePeriod</span> <span class="p">[</span> <span class="nn">time</span><span class="p">:</span><span class="nt">year</span> <span class="nv">?Year</span> <span class="p">]</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">bound</span> <span class="nv">?Bound</span> <span class="p">;</span>
+               <span class="p">:</span><span class="nt">measurement</span> <span class="nv">?Value</span> <span class="p">.</span>
+  <span class="k">FILTER</span><span class="p">(</span> <span class="nv">?Object</span> <span class="o">=</span> <span class="s">&quot;Aggregates&quot;</span> <span class="p">)</span>
+  <span class="k">FILTER</span><span class="p">(</span> <span class="nv">?Year</span> <span class="o">=</span> <span class="s">&quot;2014&quot;</span><span class="o">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">gYear</span> <span class="o">||</span> <span class="nv">?Year</span> <span class="o">=</span> <span class="s">&quot;2018&quot;</span><span class="o">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">gYear</span> <span class="p">)</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?Bound</span> <span class="nv">?Year</span>
+</pre></div>
+</div>
+<p>This results in:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;object_observations_aggregates&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Bound</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2014-01-01</td>
+      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>157000000000.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2014-01-01</td>
+      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>150010054000.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014-01-01</td>
+      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>152010054000.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2014-01-01</td>
+      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>155000000000.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018-01-01</td>
+      <td>https://ukfires.org/probs/ontology/LowerBound</td>
+      <td>69722551000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="object_definitions.html" title="previous page">Object definitions</a>
+    <a class='right-next' id="next-link" href="indices.html" title="next page">Indices</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By UK FIRES<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  None
+  </body>
+</html>
