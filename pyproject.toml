@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "probs-ontology-example"
+version = "0.1.0"
+description = ""
+authors = ["Rick Lupton <mail@ricklupton.name>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+doit = "~=0.33.1"
+pandas = "~=1.2.0"
+jupyter-book = "~=0.10.1"
+pytest = "~=6.2.1"
+sphinx-probs-rdf = "~=0.1.1"
+jupytext = {version = "~=1.10.3", extras = ["myst"]}
+probs_ontology = {version = "~=1.5.2", extras = ["runner"]}
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

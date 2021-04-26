@@ -1,0 +1,20 @@
+PRODCOM List 2016
+File: PRD_2016_20200617_185122.csv
+Link: https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_CLS_DLD&StrNom=PRD_2016&StrLanguageCode=EN&StrLayoutCode=HIERARCHIC#
+
+PRODCOM List 2017-2018
+File: PRD_2017_20200617_185035.csv
+Link: https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_CLS_DLD&StrNom=PRD_2017&StrLanguageCode=EN&StrLayoutCode=HIERARCHIC#
+
+PRODCOM 2017-2018, PRODCOM 2016 Correspondence
+File: PRC_2017_2016.csv
+Link: https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM&StrGroupCode=CLASSIFIC&StrLanguageCode=EN&IntFamilyCode=&TxtSearch=prodcom&IntCurrentPage=1
+
+PRODCOM 2016 Production Data
+File: Coming soon
+Link: https://ec.europa.eu/eurostat/web/prodcom/data/database
+
+PRODCOM 2018 Production Data
+File: PRODCOM2018DATA.csv
+Link: https://ec.europa.eu/eurostat/web/prodcom/data/database
+Note: Actual data taken from GitHub for now

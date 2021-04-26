@@ -1,0 +1,5 @@
+# import the ontology
+import "../probs.fss"
+
+# import the data
+import probs_data.nt.gz

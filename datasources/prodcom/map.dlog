@@ -1,0 +1,107 @@
+
+:Object[?ObjectID] ,
+ufpc:ClassificationCode[?CCID] ,
+[?ObjectID, :hasClassificationCode, ?CCID] ,
+[?ObjectID, :objectName, ?objectName] ,
+[?CCID, :codeName, ?Code] ,
+[?CCID, :codeDescription, ?Description] ,
+[?CCID, :belongsToList, ufpc:Prodcom2017List]
+        :- ufrd:PRD_2017(?Code, ?Description, ?Parent, ?Level) ,
+        BIND(IRI(CONCAT(STR(ufpc2017:), "Object-", SHA256(?Code))) AS ?ObjectID) ,
+        BIND(IRI(CONCAT(STR(ufpc2017:), "ClassificationCode-", SHA256(?Code))) AS ?CCID) ,
+        BIND(CONCAT("PRODCOM Object from Code ", ?Code) AS ?objectName) .
+# if ?Parent is not "absent"
+:Object[?ParentID] ,
+[?ParentID, :objectComposedOf, ?ObjectID]
+        :- ufrd:PRD_2017(?Code, ?Description, ?Parent, ?Level) ,
+        BIND(IRI(CONCAT(STR(ufpc2017:), "Object-", SHA256(?Code))) AS ?ObjectID) ,
+        BIND(IRI(CONCAT(STR(ufpc2017:), "Object-", SHA256(?Parent))) AS ?ParentID) .
+
+:Object[?ObjectID] ,
+ufpc:ClassificationCode[?CCID] ,
+[?ObjectID, :hasClassificationCode, ?CCID] ,
+[?ObjectID, :objectName, ?objectName] ,
+[?CCID, :codeName, ?Code] ,
+[?CCID, :codeDescription, ?Description] ,
+[?CCID, :belongsToList, ufpc:Prodcom2016List]
+        :- ufrd:PRD_2016(?Code, ?Description, ?Parent, ?Level) ,
+        BIND(IRI(CONCAT(STR(ufpc2016:), "Object-", SHA256(?Code))) AS ?ObjectID) ,
+        BIND(IRI(CONCAT(STR(ufpc2016:), "ClassificationCode-", SHA256(?Code))) AS ?CCID) ,
+        BIND(CONCAT("PRODCOM Object from Code ", ?Code) AS ?objectName) .
+# if ?Parent is not "absent"
+:Object[?ParentID] ,
+[?ParentID, :objectComposedOf, ?ObjectID]
+        :- ufrd:PRD_2016(?Code, ?Description, ?Parent, ?Level) ,
+        BIND(IRI(CONCAT(STR(ufpc2016:), "Object-", SHA256(?Code))) AS ?ObjectID) ,
+        BIND(IRI(CONCAT(STR(ufpc2016:), "Object-", SHA256(?Parent))) AS ?ParentID) .
+
+:Object[?O2017] ,
+:Object[?O2016] ,
+[?O2017, :objectEquivalentTo, ?O2016]
+        :- ufrd:PRC_2017_2016(?Code2017, ?Code2016) ,
+        BIND(IRI(CONCAT(STR(ufpc2017:), "Object-", SHA256(?Code2017))) AS ?O2017) ,
+        BIND(IRI(CONCAT(STR(ufpc2016:), "Object-", SHA256(?Code2016))) AS ?O2016) .
+
+:DirectObservation[?ID] ,
+[?ID, :objectDirectlyDefinedBy, ?PRCCode] ,
+[?ID, :hasRegion, gnd:2635167] ,
+[?ID, :hasTimePeriod, :TimePeriod_YearOf2018] ,
+[?ID, :hasRole, :SoldProduction] ,
+[?ID, :partOfDataset, ufpc:PRODCOM2018DATA] ,
+[?ID, :metric, quantitykind:Mass] ,
+[?ID, :bound, :ExactBound]
+        :- ufrd:PRODCOM2018DATA(?IDstring, ?PRCCODEstring, ?PRODQNT),
+        BIND(IRI(CONCAT(STR(ufpcd2018:), "Observation-", SHA256(?IDstring))) AS ?ID) ,
+        BIND(IRI(CONCAT(STR(ufpc2017:), "Object-", SHA256(?PRCCODEstring))) AS ?PRCCode) .
+# if ?PRODQNT is not "absent"
+[?ID, :measurement, ?PRODQNT]
+        :- ufrd:PRODCOM2018DATA(?IDstring, ?PRCCODEstring, ?PRODQNT), FILTER(BOUND(?PRODQNT)),
+        BIND(IRI(CONCAT(STR(ufpcd2018:), "Observation-", SHA256(?IDstring))) AS ?ID) .
+
+:DirectObservation[?ID] ,
+[?ID, :objectDirectlyDefinedBy, ?PRCCode] ,
+[?ID, :hasRegion, gnd:2635167] ,
+[?ID, :hasTimePeriod, :TimePeriod_YearOf2017] ,
+[?ID, :hasRole, :SoldProduction] ,
+[?ID, :partOfDataset, ufpc:PRODCOM2017DATA] ,
+[?ID, :metric, quantitykind:Mass] ,
+[?ID, :bound, :ExactBound]
+        :- ufrd:PRODCOM2017DATA(?IDstring, ?PRCCODEstring, ?PRODQNT),
+        BIND(IRI(CONCAT(STR(ufpcd2017:), "Observation-", SHA256(?IDstring))) AS ?ID) ,
+        BIND(IRI(CONCAT(STR(ufpc2017:), "Object-", SHA256(?PRCCODEstring))) AS ?PRCCode) .
+# if ?PRODQNT is not "absent"
+[?ID, :measurement, ?PRODQNT]
+        :- ufrd:PRODCOM2017DATA(?IDstring, ?PRCCODEstring, ?PRODQNT), FILTER(BOUND(?PRODQNT)),
+        BIND(IRI(CONCAT(STR(ufpcd2017:), "Observation-", SHA256(?IDstring))) AS ?ID) .
+
+:DirectObservation[?ID] ,
+[?ID, :objectDirectlyDefinedBy, ?PRCCode] ,
+[?ID, :hasRegion, gnd:2635167] ,
+[?ID, :hasTimePeriod, :TimePeriod_YearOf2016] ,
+[?ID, :hasRole, :SoldProduction] ,
+[?ID, :partOfDataset, ufpc:PRODCOM2016DATA] ,
+[?ID, :metric, quantitykind:Mass] ,
+[?ID, :bound, :ExactBound]
+        :- ufrd:PRODCOM2016DATA(?IDstring, ?PRCCODEstring, ?PRODQNT),
+        BIND(IRI(CONCAT(STR(ufpcd2016:), "Observation-", SHA256(?IDstring))) AS ?ID) ,
+        BIND(IRI(CONCAT(STR(ufpc2016:), "Object-", SHA256(?PRCCODEstring))) AS ?PRCCode) .
+# if ?PRODQNT is not "absent"
+[?ID, :measurement, ?PRODQNT]
+        :- ufrd:PRODCOM2016DATA(?IDstring, ?PRCCODEstring, ?PRODQNT), FILTER(BOUND(?PRODQNT)),
+        BIND(IRI(CONCAT(STR(ufpcd2016:), "Observation-", SHA256(?IDstring))) AS ?ID) .
+
+:DirectObservation[?ID] ,
+[?ID, :objectDirectlyDefinedBy, ?PRCCode] ,
+[?ID, :hasRegion, gnd:2635167] ,
+[?ID, :hasTimePeriod, :TimePeriod_YearOf2014] ,
+[?ID, :hasRole, :SoldProduction] ,
+[?ID, :partOfDataset, ufpc:PRODCOM2014DATA] ,
+[?ID, :metric, quantitykind:Mass] ,
+[?ID, :bound, :ExactBound]
+        :- ufrd:PRODCOM2014DATA(?IDstring, ?PRCCODEstring, ?PRODQNT),
+        BIND(IRI(CONCAT(STR(ufpcd2014:), "Observation-", SHA256(?IDstring))) AS ?ID) ,
+        BIND(IRI(CONCAT(STR(ufpc2016:), "Object-", SHA256(?PRCCODEstring))) AS ?PRCCode) .
+# if ?PRODQNT is not "absent"
+[?ID, :measurement, ?PRODQNT]
+        :- ufrd:PRODCOM2014DATA(?IDstring, ?PRCCODEstring, ?PRODQNT), FILTER(BOUND(?PRODQNT)),
+        BIND(IRI(CONCAT(STR(ufpcd2014:), "Observation-", SHA256(?IDstring))) AS ?ID) .

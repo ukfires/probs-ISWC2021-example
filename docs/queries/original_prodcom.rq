@@ -1,0 +1,11 @@
+PREFIX : <https://ukfires.org/probs/ontology/>
+PREFIX time: <http://www.w3.org/2006/time#>
+
+SELECT DISTINCT ?Object ?Year ?Value
+WHERE {
+  ?Observation :objectDefinedBy [ :objectName ?Object ] ;
+               :hasTimePeriod [ time:year ?Year ] ;
+               :measurement ?Value .
+  FILTER( ?Object = "PRODCOM Object from Code 08121210" )
+}
+ORDER BY ?Object ?Year

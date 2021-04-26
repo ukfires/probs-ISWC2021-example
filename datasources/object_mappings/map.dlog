@@ -1,0 +1,21 @@
+:ReferenceObject[?ObjectID] ,
+:Object[?CTGeneralObjectID] ,
+[?ObjectID, :objectEquivalentTo, ?CTGeneralObjectID] ,
+[?CTGeneralObjectID, :objectName, ?GeneralObjectType] ,
+[?CTGeneralObjectID, :objectComposedOf, ?CTObjectID]
+        :- ufrd:ObjectDefinitions(?ObjectType, ?CTCode, ?PCCode) ,
+        BIND(IRI(CONCAT(STR(sys:), ?ObjectType)) AS ?ObjectID) ,
+        BIND(IRI(CONCAT(STR(ufct2017:), "Object-", SHA256(?ObjectType))) AS ?CTGeneralObjectID) ,
+        BIND(IRI(CONCAT(STR(ufct2017:), "Object-", SHA256(?CTCode))) AS ?CTObjectID) ,
+        BIND(CONCAT(?ObjectType, " in COMTRADE 2017") AS ?GeneralObjectType) .
+# if ?PCCode is not "absent"
+:Object[?PCGeneralObjectID] ,
+[?ObjectID, :objectEquivalentTo, ?PCGeneralObjectID] ,
+[?PCGeneralObjectID, :objectName, ?GeneralObjectType] ,
+[?PCGeneralObjectID, :objectComposedOf, ?PCObjectID]
+        :- ufrd:ObjectDefinitions(?ObjectType, ?CTCode, ?PCCode) ,
+        BIND(IRI(CONCAT(STR(sys:), ?ObjectType)) AS ?ObjectID) ,
+        BIND(IRI(CONCAT(STR(ufpc2017:), "Object-", SHA256(?ObjectType))) AS ?PCGeneralObjectID) ,
+        BIND(IRI(CONCAT(STR(ufpc2017:), "Object-", SHA256(?PCCode))) AS ?PCObjectID) ,
+        BIND(CONCAT(?ObjectType, " in PRODCOM 2017") AS ?GeneralObjectType) .
+

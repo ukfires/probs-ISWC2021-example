@@ -1,0 +1,13 @@
+PREFIX : <https://ukfires.org/probs/ontology/>
+PREFIX ufpc: <https://ukfires.org/probs/ontology/prodcom/>
+PREFIX time: <http://www.w3.org/2006/time#>
+
+SELECT ?Object ?Year ?Value
+WHERE {
+  ?Observation :partOfDataset ufpc:BGSMineralsYearbook2015 ;
+               :objectDefinedBy [ :objectName ?Object ] ;
+               :hasTimePeriod [ time:year ?Year ] ;
+               :measurement ?Value .
+  FILTER( STRENDS(?Object, "in BGS") )
+}
+ORDER BY ?Object ?Year

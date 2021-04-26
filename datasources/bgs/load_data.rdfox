@@ -1,0 +1,34 @@
+######################################################
+###          BGS Aggregates table                  ###
+######################################################
+
+prefix : <https://ukfires.org/probs/ontology/>
+prefix sys: <http://ukfires.org/probs/system/>
+prefix ufbgs: <https://ukfires.org/probs/ontology/data/bgs/>
+
+dsource register delimitedFile "BGS_Aggregates_2015"            \
+    file    "$(dir.root)/data/bgs/aggregates.csv"               \
+    header  true                                                \
+    quote   '"'
+
+tupletable create ufrd:BGS_Aggregates_2015                      \
+    dataSourceName  "BGS_Aggregates_2015"                       \
+    "columns"       3                                           \
+    "1"             "{Year}"                                    \
+    "1.datatype"    "string"                                    \
+    "2"             "{Object}"                                  \
+    "2.datatype"    "string"                                    \
+    "3"             "{Value} "                                  \
+    "3.datatype"    "xsd:decimal"                               \
+    "3.if-empty"    "absent"
+
+# 1 This is the year (time period)
+# 2 This is the object name
+# 3 This is the measurement value (millions of tonnes)
+
+######################################################
+###          Link object types                     ###
+######################################################
+
+import ! sys:BGSCrushedStone :objectEquivalentTo sys:CrushedStone .
+import ! sys:BGSSandAndGravel :objectEquivalentTo sys:SandAndGravel .

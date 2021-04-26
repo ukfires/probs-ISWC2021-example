@@ -1,0 +1,21 @@
+PREFIX : <https://ukfires.org/probs/ontology/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+
+SELECT DISTINCT ?Observation ?WDFObject ?WDFValue
+WHERE {
+  ?Observation :objectDefinedBy [ :objectName ?Object ] ;
+               :hasRegion [ gn:name "United Kingdom" ] ;
+               :hasRole :SoldProduction ;
+               :hasTimePeriod [ time:year ?Year ] ;
+               prov:wasDerivedFrom ?WDF .
+
+  FILTER( ?Object = "Crushed stone" || ?Object = "Sand & Gravel" )
+  FILTER( ?Year = "2014"^^xsd:gYear || ?Year = "2018"^^xsd:gYear )
+
+  ?WDF a :DirectObservation ;
+         :objectDirectlyDefinedBy [ :objectName ?WDFObject ] ;
+         :measurement ?WDFValue
+}
+ORDER BY ?Observation ?WDFObject

@@ -1,0 +1,16 @@
+PREFIX : <https://ukfires.org/probs/ontology/>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX time: <http://www.w3.org/2006/time#>
+
+SELECT ?Year ?Bound ?Value
+WHERE {
+  ?Observation :objectDefinedBy [ :objectName ?Object ] ;
+               :hasRegion [ gn:name "United Kingdom" ] ;
+               :hasRole :SoldProduction ;
+               :hasTimePeriod [ time:year ?Year ] ;
+               :bound ?Bound ;
+               :measurement ?Value .
+  FILTER( ?Object = "Aggregates" )
+  FILTER( ?Year = "2014"^^xsd:gYear || ?Year = "2018"^^xsd:gYear )
+}
+ORDER BY ?Bound ?Year

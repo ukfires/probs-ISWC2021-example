@@ -1,0 +1,8 @@
+/.doit.db.db
+__pycache__
+.DS_Store
+/scripts/_rdfox_working/
+/data/probs_data.nt.gz
+.ipynb_checkpoints/
+/docs/_build/
+/probs.fss

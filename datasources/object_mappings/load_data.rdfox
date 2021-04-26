@@ -1,0 +1,29 @@
+
+
+
+
+######################################################
+### Connect CODE to OBJECT using the CN speadsheet ###
+######################################################
+
+# Object Definitions (2017 PRC)
+
+dsource register delimitedFile "ObjectDefinitions"              \
+    file    "$(dir.root)/data/object_mappings/object_mappings.csv"     \
+    header  true                                                \
+    quote   '"'
+
+tupletable create ufrd:ObjectDefinitions                        \
+    dataSourceName  "ObjectDefinitions"                         \
+    "columns"       3                                           \
+    "1"             "{ObjectType}"                              \
+    "1.datatype"    "string"                                    \
+    "2"             "{Code}"                                    \
+    "2.datatype"    "string"                                    \
+    "3"             "{PRC}"                                     \
+    "3.datatype"    "string"                                    \
+    "3.if-empty"    "absent"
+
+    # 1 String of Object Type
+    # 2 IRI of CN ClassificationCodeObject
+    # 3 IRI of PRC ClassificationCodeObject

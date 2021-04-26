@@ -1,0 +1,188 @@
+prefix ufpc: <https://ukfires.org/probs/ontology/prodcom/>
+prefix ufpc2016: <https://ukfires.org/probs/ontology/prodcom/2016/>
+prefix ufpc2017: <https://ukfires.org/probs/ontology/prodcom/2017/>
+prefix ufpcd: <https://ukfires.org/probs/ontology/prodcom_data/>
+prefix ufpcd2014: <https://ukfires.org/probs/ontology/prodcom_data/2014/>
+prefix ufpcd2016: <https://ukfires.org/probs/ontology/prodcom_data/2016/>
+prefix ufpcd2017: <https://ukfires.org/probs/ontology/prodcom_data/2017/>
+prefix ufpcd2018: <https://ukfires.org/probs/ontology/prodcom_data/2018/>
+
+######################################################
+###          2017 prodcom list definition          ###
+######################################################
+
+dsource register delimitedFile "PRD_2017"                       \
+    file    "$(dir.root)/data/prodcom/PRD_2017_20200617_185035.csv"     \
+    header  true                                                \
+    quote   '"'
+
+tupletable create ufrd:PRD_2017                                 \
+    dataSourceName  "PRD_2017"                                  \
+    "columns"       4                                           \
+    "1"             "{Code}"                                    \
+    "1.datatype"    "string"                                    \
+    "2"             "{Description}"                             \
+    "2.datatype"    "string"                                    \
+    "3"             "{Parent}"                                  \
+    "3.datatype"    "string"                                    \
+    "3.if-empty"    "absent"                                    \
+    "4"             "{Level}"                                   \
+    "4.datatype"    "string"
+
+# 1 This is the classification code, with dots removed in advance
+# 2 This is the classification description
+# 3 This is the parent code for the classification code, with dots removed in advance
+# 4 This is the level of the classification code in the hierarchy
+
+
+######################################################
+###          2016 prodcom list definition          ###
+######################################################
+
+dsource register delimitedFile "PRD_2016"                       \
+    file    "$(dir.root)/data/prodcom/PRD_2016_20200617_185122.csv"     \
+    header  true                                                \
+    quote   '"'
+
+tupletable create ufrd:PRD_2016                                 \
+    dataSourceName  "PRD_2016"                                  \
+    "columns"       4                                           \
+    "1"             "{Code}"                                    \
+    "1.datatype"    "string"                                    \
+    "2"             "{Description}"                             \
+    "2.datatype"    "string"                                    \
+    "3"             "{Parent}"                                  \
+    "3.datatype"    "string"                                    \
+    "3.if-empty"    "absent"                                    \
+    "4"             "{Level}"                                   \
+    "4.datatype"    "string"
+
+# 1 This is the classification code, with dots removed in advance
+# 2 This is the classification description
+# 3 This is the parent code for the classification code, with dots removed in advance
+# 4 This is the level of the classification code in the hierarchy
+
+
+######################################################
+###        Prodcom Correspondence 2017 - 2016      ###
+######################################################
+
+dsource register delimitedFile "PRC_2017_2016"                  \
+    file    "$(dir.root)/data/prodcom/PRC_2017_2016.csv"                \
+    header  true                                                \
+    quote   '"'
+
+tupletable create ufrd:PRC_2017_2016                            \
+    dataSourceName  "PRC_2017_2016"                             \
+    "columns"       2                                           \
+    "1"             "{PRC2017}"                                 \
+    "1.datatype"    "string"                                    \
+    "1.if-empty"    "absent"                                    \
+    "2"             "{PRC2016}"                                 \
+    "2.datatype"    "string"                                    \
+    "2.if-empty"    "absent"
+
+    # 1 This is the PRC ClassificationCodes for 2017-2018
+    # 1 if blank the corresponding code was deleted
+    # 2 This is the PRC ClassificationCodes for 2016
+    # 2 if blank the corresponding code was added
+
+######################################################
+###                 2018 PRODCOM Data              ###
+######################################################
+
+dsource register delimitedFile "PRODCOM2018DATA"                \
+    file    "$(dir.root)/data/prodcom/PRODCOM2018DATA.csv"              \
+    header  true                                                \
+    quote   '"'
+
+tupletable create ufrd:PRODCOM2018DATA                          \
+    dataSourceName  "PRODCOM2018DATA"                           \
+    "columns"       3                                           \
+    "1"             "{ID}"                                      \
+    "1.datatype"    "string"                                    \
+    "2"             "{PRCCODE}"                                 \
+    "2.datatype"    "string"                                    \
+    "3"             "{PRODQNT}"                                 \
+    "3.datatype"    "xsd:decimal"                               \
+    "3.if-empty"    "absent"
+
+    # 1 ID generated for unique observations
+    # 2 This is the ClassificationCode and related to 1. by `objectDefinedBy`
+    # 3 MeasurementValue (of measurement of observation) - the measurement is implicit here. If blank then the value was witheld (but is not 0 necessarily)
+
+
+
+######################################################
+###                 2017 PRODCOM Data              ###
+######################################################
+
+dsource register delimitedFile "PRODCOM2017DATA"                \
+    file    "$(dir.root)/data/prodcom/PRODCOM2017DATA.csv"              \
+    header  true                                                \
+    quote   '"'
+
+tupletable create ufrd:PRODCOM2017DATA                          \
+    dataSourceName  "PRODCOM2017DATA"                           \
+    "columns"       3                                           \
+    "1"             "{ID}"                                      \
+    "1.datatype"    "string"                                    \
+    "2"             "{PRCCODE}"                                 \
+    "2.datatype"    "string"                                    \
+    "3"             "{PRODQNT}"                                 \
+    "3.datatype"    "xsd:decimal"                               \
+    "3.if-empty"    "absent"
+
+    # 1 ID generated for unique observations
+    # 2 This is the ClassificationCode and related to 1. by `objectDefinedBy`
+    # 3 MeasurementValue (of measurement of observation) - the measurement is implicit here. If blank then the value was witheld (but is not 0 necessarily)
+
+
+######################################################
+###                 2016 PRODCOM Data              ###
+######################################################
+
+dsource register delimitedFile "PRODCOM2016DATA"                \
+    file "$(dir.root)/data/prodcom/PRODCOM2016DATA.csv"                 \
+    header  true                                                \
+    quote   '"'
+
+tupletable create ufrd:PRODCOM2016DATA                          \
+    dataSourceName  "PRODCOM2016DATA"                           \
+    "columns"       3                                           \
+    "1"             "{ID}"                                      \
+    "1.datatype"    "string"                                    \
+    "2"             "{PRCCODE}"                                 \
+    "2.datatype"    "string"                                    \
+    "3"             "{PRODQNT}"                                 \
+    "3.datatype"    "xsd:decimal"                               \
+    "3.if-empty"    "absent"
+
+    # 1 ID generated for unique observations
+    # 2 This is the ClassificationCode and related to 1. by `objectDefinedBy`
+    # 3 MeasurementValue (of measurement of observation) - the measurement is implicit here. If blank then the value was witheld (but is not 0 necessarily)
+
+
+######################################################
+###                 2016 PRODCOM Data              ###
+######################################################
+
+dsource register delimitedFile "PRODCOM2014DATA"                \
+    file "$(dir.root)/data/prodcom/PRODCOM2014DATA_extract.csv"                 \
+    header  true                                                \
+    quote   '"'
+
+tupletable create ufrd:PRODCOM2014DATA                          \
+    dataSourceName  "PRODCOM2014DATA"                           \
+    "columns"       3                                           \
+    "1"             "{ID}"                                      \
+    "1.datatype"    "string"                                    \
+    "2"             "{PRCCODE}"                                 \
+    "2.datatype"    "string"                                    \
+    "3"             "{PRODQNT}"                                 \
+    "3.datatype"    "xsd:decimal"                               \
+    "3.if-empty"    "absent"
+
+    # 1 ID generated for unique observations
+    # 2 This is the ClassificationCode and related to 1. by `objectDefinedBy`
+    # 3 MeasurementValue (of measurement of observation) - the measurement is implicit here. If blank then the value was witheld (but is not 0 necessarily)

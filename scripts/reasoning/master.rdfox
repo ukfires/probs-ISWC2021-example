@@ -1,0 +1,9 @@
+# run `RDFox sandbox <root> 'exec scripts/reasoning/master'`
+
+exec scripts/reasoning/init
+
+exec load_data
+
+import rules.dlog
+
+endpoint start

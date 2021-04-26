@@ -1,0 +1,19 @@
+:DirectObservation[?ID] ,
+[?ID, :objectDirectlyDefinedBy, ?Object] ,
+[?ID, :hasRegion, gnd:2635167] ,
+[?ID, :hasTimePeriod, ?TimePeriod] ,
+[?ID, :hasRole, :SoldProduction] ,
+[?ID, :partOfDataset, ufpc:BGSMineralsYearbook2015] ,
+[?ID, :metric, quantitykind:Mass] ,
+[?ID, :bound, :ExactBound]
+        :- ufrd:BGS_Aggregates_2015(?Year, ?ObjectID, ?Value),
+        BIND(IRI(CONCAT(STR(ufbgs:), "Observation-", SHA256(CONCAT(?ObjectID, ?Year)))) AS ?ID) ,
+        BIND(IRI(CONCAT(STR(:), "TimePeriod_YearOf", ?Year)) AS ?TimePeriod) ,
+        BIND(IRI(CONCAT(STR(sys:), ?ObjectID)) AS ?Object) .
+
+# if ?Value is not "absent" -- convert from "millions of tonnes"
+[?ID, :measurement, ?ValueKg]
+        :- ufrd:BGS_Aggregates_2015(?Year, ?ObjectID, ?Value),
+        FILTER(BOUND(?Value)),
+        BIND(IRI(CONCAT(STR(ufbgs:), "Observation-", SHA256(CONCAT(?ObjectID, ?Year)))) AS ?ID) ,
+        BIND(?Value * 1e9 AS ?ValueKg) .
