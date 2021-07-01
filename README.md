@@ -44,3 +44,9 @@ jupyter-book build docs
 ```
 
 The results are in `docs/_build`. This includes example queries.
+
+## License
+
+We include some data from other sources in the `raw_data` and `datasources` directories, but these are only for the purpose of illustrating the operation of the PRObs ontology and any use of this data is subject to the original source: [COMTRADE](https://comtrade.un.org/), [PRODCOM](https://ec.europa.eu/eurostat/web/prodcom) and [BGS](https://www.bgs.ac.uk/).
+
+The other documents and code is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
