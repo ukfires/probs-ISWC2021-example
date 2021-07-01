@@ -1,5 +1,7 @@
 # Example application of the PRObs ontology
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5052757.svg)](https://doi.org/10.5281/zenodo.5052757)
+
 This repository contains an example application of the PRObs ontology to querying data about a small subset of the UK production system.
 
 ## Prerequisites
