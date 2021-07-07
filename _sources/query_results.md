@@ -73,7 +73,7 @@ tidydf(results["original_prodcom"])
 
 Now let's query for all the observations that would be relevant to modelling production of two object types, {system:ref}`CrushedStone` and {system:ref}`SandAndGravel`, in all years that are available.
 
-```{figure} figures/Aggregates Hierarchy with Obs.svg
+```{figure} figures/Aggregates_Hierarchy_with_Obs.svg
 :name: Aggregates Hierarchy with Obs
 
 All the observations relevant to `Aggregates` components (`CrushedStone` and `SandAndGravel`).
@@ -126,7 +126,7 @@ tidydf(results["object_observations_aggregates"])
 
 Exactly as we expected from the observations of its components:
 
-```{figure} figures/Composition of Aggregates.svg
+```{figure} figures/Composition_of_Aggregates.svg
 :name: Composition of Aggregates
 
 All the observations of `Aggregates`.
