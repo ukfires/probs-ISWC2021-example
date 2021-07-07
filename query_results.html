@@ -228,7 +228,8 @@
                 
   <div class="section" id="query-results">
 <h1>Query results<a class="headerlink" href="#query-results" title="Permalink to this headline">¶</a></h1>
-<p>Load libraries and SPARQL queries, and send them to RDFox to be answered against the pre-converted data:</p>
+<p>Python code might be used to perform some operations.
+For instance, the following snippet loads libraries and SPARQL queries, and sends them to RDFox to be answered against the pre-converted data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -245,28 +246,25 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obs_short_labels</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;https://ukfires.org/probs/ontology/data/bgs/Observation-29cc1ee823612f1307925b7c5b003feb9668a06cb991da0b6b9af30033fde2a0&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 2&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;https://ukfires.org/probs/ontology/ComposedInferredObservation--7af16db03ac2ac2a9a773645b069b7dacffa239f5b98b9887fa4a0323b787ce7&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 3&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-0cefb7bea0582e08d7878e4c3f684c2307edb305bfddd5e3ea6f3efb8f9b02c1-d92d8d1a049b5c171ed7dfde5057cddf9984bb5fdd104af98b622c1be88800a7&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 1&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;https://ukfires.org/probs/ontology/data/bgs/Observation-c2bb6910b2b19133e460750a4dd799924afd9c4aceae0736aea91635592cd1ff&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 4&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-00613791c18e3cf39874c66a176e7229189e5fed28a45ef7921e3f97e9143eab-e9398b5c9aa49bcd1b2f0dc8fa74b41a9faa021848620496ad682721f2cf9a27&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 5&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-00613791c18e3cf39874c66a176e7229189e5fed28a45ef7921e3f97e9143eab-e53dd7ea6154ae201c77e77a2b7260c5304cfd12b67be85965c4089720d9fa19&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 6&quot;</span>
-<span class="p">}</span>
-<span class="k">def</span> <span class="nf">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s2">&quot;Observation&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span>
-        <span class="n">df</span><span class="o">.</span><span class="n">Observation</span> <span class="o">=</span> <span class="p">[</span><span class="n">obs_short_labels</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">Observation</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">df</span>
-</pre></div>
-</div>
-</div>
-</div>
+<!-- ```{code-cell} ipython3
+obs_short_labels = {
+    "https://ukfires.org/probs/ontology/data/bgs/Observation-29cc1ee823612f1307925b7c5b003feb9668a06cb991da0b6b9af30033fde2a0": "Obs 2",
+    "https://ukfires.org/probs/ontology/ComposedInferredObservation--7af16db03ac2ac2a9a773645b069b7dacffa239f5b98b9887fa4a0323b787ce7": "Obs 3",
+    "https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-0cefb7bea0582e08d7878e4c3f684c2307edb305bfddd5e3ea6f3efb8f9b02c1-d92d8d1a049b5c171ed7dfde5057cddf9984bb5fdd104af98b622c1be88800a7": "Obs 1",
+    "https://ukfires.org/probs/ontology/data/bgs/Observation-c2bb6910b2b19133e460750a4dd799924afd9c4aceae0736aea91635592cd1ff": "Obs 4",
+    "https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-00613791c18e3cf39874c66a176e7229189e5fed28a45ef7921e3f97e9143eab-e9398b5c9aa49bcd1b2f0dc8fa74b41a9faa021848620496ad682721f2cf9a27": "Obs 5",
+    "https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-00613791c18e3cf39874c66a176e7229189e5fed28a45ef7921e3f97e9143eab-e53dd7ea6154ae201c77e77a2b7260c5304cfd12b67be85965c4089720d9fa19": "Obs 6"
+}
+def tidydf(results):
+    df = pd.DataFrame(results)
+    if "Observation" in df:
+        df.Observation = [obs_short_labels.get(str(x), x) for x in df.Observation]
+    return df
+``` -->
 <div class="section" id="retrieve-original-data-points">
 <h2>Retrieve original data points<a class="headerlink" href="#retrieve-original-data-points" title="Permalink to this headline">¶</a></h2>
-<p>First, let’s check we can retrieve the original data points in a consistent way. From the BGS Minerals Yearbook:</p>
+<p>First, let’s check we can retrieve the original data points consistently.
+From the BGS Minerals Yearbook:</p>
 <div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">ufpc</span><span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/prodcom/&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">time</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span>
@@ -289,63 +287,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">913</span><span class="n">d84167230</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;original_bgs&quot;</span><span class="p">])</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Object</th>
-      <th>Year</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Crushed stone in BGS</td>
-      <td>2014-01-01</td>
-      <td>9.900000e+10</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Igneous rock in BGS</td>
-      <td>2014-01-01</td>
-      <td>3.800000e+10</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Limestone &amp; Dolomite in BGS</td>
-      <td>2014-01-01</td>
-      <td>5.300000e+10</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Sand &amp; Gravel in BGS</td>
-      <td>2014-01-01</td>
-      <td>5.600000e+10</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Sandstone in BGS</td>
-      <td>2014-01-01</td>
-      <td>1.000000e+10</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;tidydf&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>We can also retrieve an original data point from Prodcom linked to a classification code:</p>
 <div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
@@ -367,51 +317,15 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Object</th>
-      <th>Year</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>PRODCOM Object from Code 08121210</td>
-      <td>2014-01-01</td>
-      <td>24192579000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>PRODCOM Object from Code 08121210</td>
-      <td>2017-01-01</td>
-      <td>31355644000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="inferred-observations">
 <h2>Inferred observations<a class="headerlink" href="#inferred-observations" title="Permalink to this headline">¶</a></h2>
-<p>Now let’s query for all the observations that would be relevant to modelling production of two object types, <a class="reference internal" href="object_definitions.html#object-CrushedStone" title="object-CrushedStone"><code class="xref system system-ref docutils literal notranslate"><span class="pre">CrushedStone</span></code></a> and <a class="reference internal" href="object_definitions.html#object-SandAndGravel" title="object-SandAndGravel"><code class="xref system system-ref docutils literal notranslate"><span class="pre">SandAndGravel</span></code></a>, in all years that are available. Here is the SPARQL query:</p>
+<p>Now let’s query for all the observations that would be relevant to modelling production of two object types, <a class="reference internal" href="object_definitions.html#object-CrushedStone" title="object-CrushedStone"><code class="xref system system-ref docutils literal notranslate"><span class="pre">CrushedStone</span></code></a> and <a class="reference internal" href="object_definitions.html#object-SandAndGravel" title="object-SandAndGravel"><code class="xref system system-ref docutils literal notranslate"><span class="pre">SandAndGravel</span></code></a>, in all years that are available.</p>
+<div class="figure align-default" id="aggregates-hierarchy-with-obs">
+<img alt="figures/AggregatesHierarchywithObs.svg" src="figures/AggregatesHierarchywithObs.svg" /><p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">All the observations relevant to <code class="docutils literal notranslate"><span class="pre">Aggregates</span></code> components (<code class="docutils literal notranslate"><span class="pre">CrushedStone</span></code> and <code class="docutils literal notranslate"><span class="pre">SandAndGravel</span></code>).</span><a class="headerlink" href="#aggregates-hierarchy-with-obs" title="Permalink to this image">¶</a></p>
+</div>
+<p>Here is the SPARQL query:</p>
 <div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">gn</span><span class="p">:</span> <span class="nl">&lt;http://www.geonames.org/ontology#&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">time</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span>
@@ -437,76 +351,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Observation</th>
-      <th>Object</th>
-      <th>Year</th>
-      <th>Bound</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Obs 3</td>
-      <td>Crushed stone</td>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
-      <td>101000000000.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Obs 2</td>
-      <td>Crushed stone</td>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
-      <td>99000000000.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Obs 1</td>
-      <td>Crushed stone</td>
-      <td>2018-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
-      <td>69722551000</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Obs 5</td>
-      <td>Sand &amp; Gravel</td>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
-      <td>51010054000</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Obs 4</td>
-      <td>Sand &amp; Gravel</td>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
-      <td>56000000000.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We can see where these values have come from:</p>
 <div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
@@ -540,94 +384,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Observation</th>
-      <th>WDFObject</th>
-      <th>WDFValue</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Obs 3</td>
-      <td>Igneous rock in BGS</td>
-      <td>38000000000.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Obs 3</td>
-      <td>Limestone &amp; Dolomite in BGS</td>
-      <td>53000000000.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Obs 3</td>
-      <td>Sandstone in BGS</td>
-      <td>10000000000.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Obs 5</td>
-      <td>PRODCOM Object from Code 08121190</td>
-      <td>26817475000</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Obs 5</td>
-      <td>PRODCOM Object from Code 08121210</td>
-      <td>24192579000</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Obs 1</td>
-      <td>PRODCOM Object from Code 08121230</td>
-      <td>68391115000</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Obs 1</td>
-      <td>PRODCOM Object from Code 08121250</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Obs 1</td>
-      <td>PRODCOM Object from Code 08121290</td>
-      <td>1331436000</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Obs 2</td>
-      <td>Crushed stone in BGS</td>
-      <td>99000000000.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Obs 4</td>
-      <td>Sand &amp; Gravel in BGS</td>
-      <td>56000000000.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>It does indeed add up to the values shown above:</p>
 <div class="cell docutils container">
@@ -636,58 +392,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Observation</th>
-      <th>WDFValue</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Obs 1</td>
-      <td>69722551000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Obs 2</td>
-      <td>99000000000.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Obs 3</td>
-      <td>101000000000.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Obs 4</td>
-      <td>56000000000.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Obs 5</td>
-      <td>51010054000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="further-aggregation">
@@ -718,64 +422,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Bound</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
-      <td>157000000000.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
-      <td>150010054000.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
-      <td>152010054000.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
-      <td>155000000000.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2018-01-01</td>
-      <td>https://ukfires.org/probs/ontology/LowerBound</td>
-      <td>69722551000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+</div>
+<p>Exactly as we expected from the observations of its components:</p>
+<div class="figure align-default" id="composition-of-aggregates">
+<img alt="figures/CompositionofAggregates.svg" src="figures/CompositionofAggregates.svg" /><p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">All the observations of <code class="docutils literal notranslate"><span class="pre">Aggregates</span></code>.</span><a class="headerlink" href="#composition-of-aggregates" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
