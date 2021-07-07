@@ -30,7 +30,7 @@ queries = {
 results = probs_query_data("../data/probs_data.nt.gz", queries)
 ```
 
-<!-- ```{code-cell} ipython3
+```{code-cell} ipython3
 obs_short_labels = {
     "https://ukfires.org/probs/ontology/data/bgs/Observation-29cc1ee823612f1307925b7c5b003feb9668a06cb991da0b6b9af30033fde2a0": "Obs 2",
     "https://ukfires.org/probs/ontology/ComposedInferredObservation--7af16db03ac2ac2a9a773645b069b7dacffa239f5b98b9887fa4a0323b787ce7": "Obs 3",
@@ -44,7 +44,7 @@ def tidydf(results):
     if "Observation" in df:
         df.Observation = [obs_short_labels.get(str(x), x) for x in df.Observation]
     return df
-``` -->
+```
 
 ## Retrieve original data points
 
