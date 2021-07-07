@@ -14,7 +14,8 @@ kernelspec:
 
 # Query results
 
-Load libraries and SPARQL queries, and send them to RDFox to be answered against the pre-converted data:
+Python code might be used to perform some operations.
+For instance, the following snippet loads libraries and SPARQL queries, and sends them to RDFox to be answered against the pre-converted data:
 
 ```{code-cell} ipython3
 from pathlib import Path
@@ -29,7 +30,7 @@ queries = {
 results = probs_query_data("../data/probs_data.nt.gz", queries)
 ```
 
-```{code-cell} ipython3
+<!-- ```{code-cell} ipython3
 obs_short_labels = {
     "https://ukfires.org/probs/ontology/data/bgs/Observation-29cc1ee823612f1307925b7c5b003feb9668a06cb991da0b6b9af30033fde2a0": "Obs 2",
     "https://ukfires.org/probs/ontology/ComposedInferredObservation--7af16db03ac2ac2a9a773645b069b7dacffa239f5b98b9887fa4a0323b787ce7": "Obs 3",
@@ -43,11 +44,12 @@ def tidydf(results):
     if "Observation" in df:
         df.Observation = [obs_short_labels.get(str(x), x) for x in df.Observation]
     return df
-```
+``` -->
 
 ## Retrieve original data points
 
-First, let's check we can retrieve the original data points in a consistent way. From the BGS Minerals Yearbook:
+First, let's check we can retrieve the original data points consistently.
+From the BGS Minerals Yearbook:
 
 ```{literalinclude} queries/original_bgs.rq
 :language: sparql
@@ -57,7 +59,7 @@ First, let's check we can retrieve the original data points in a consistent way.
 tidydf(results["original_bgs"])
 ```
 
-We can also retrieve an original data point from Prodcom linked to a classification code: 
+We can also retrieve an original data point from Prodcom linked to a classification code:
 
 ```{literalinclude} queries/original_prodcom.rq
 :language: sparql
@@ -69,7 +71,15 @@ tidydf(results["original_prodcom"])
 
 ## Inferred observations
 
-Now let's query for all the observations that would be relevant to modelling production of two object types, {system:ref}`CrushedStone` and {system:ref}`SandAndGravel`, in all years that are available. Here is the SPARQL query:
+Now let's query for all the observations that would be relevant to modelling production of two object types, {system:ref}`CrushedStone` and {system:ref}`SandAndGravel`, in all years that are available.
+
+```{figure} figures/Aggregates Hierarchy with Obs.svg
+:name: Aggregates Hierarchy with Obs
+
+All the observations relevant to `Aggregates` components (`CrushedStone` and `SandAndGravel`).
+```
+
+Here is the SPARQL query:
 
 ```{literalinclude} queries/object_observations.rq
 :language: sparql
@@ -112,4 +122,12 @@ This results in:
 
 ```{code-cell} ipython3
 tidydf(results["object_observations_aggregates"])
+```
+
+Exactly as we expected from the observations of its components:
+
+```{figure} figures/Composition of Aggregates.svg
+:name: Composition of Aggregates
+
+All the observations of `Aggregates`.
 ```
