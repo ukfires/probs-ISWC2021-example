@@ -30,4 +30,9 @@ Here are just a few example object types which we might be interested in modelli
 
 ```{end-sub-objects}
 ```
-  
+
+```{figure} figures/Aggregates Hierarchy.svg
+:name: Aggregates Hierarchy
+
+Aggregates Hierarchy.
+```
