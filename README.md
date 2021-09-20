@@ -8,16 +8,26 @@ This repository contains an example application of the PRObs ontology to queryin
 
 - [RDFox](https://www.oxfordsemantic.tech) v4.1.0
 - [Python](https://www.python.org) 3.8
+- [Poetry](https://python-poetry.org)
 
 In the following, we assume that both are installed and added to the PATH.
 
 ## Running
 
+### Installation
+
+The installation is simplified and automated using Poetry.
+You only need to run:
+
+```sh
+poetry install
+```
+
 ### Conversion
 
 You need to convert the data only if you modified the mapping. Otherwise, go to the [Reasoning](#reasoning) section.
 
-To convert the data, run `doit` from the `Ontologies/scripts` folder:
+To convert the data, run `doit` from the root folder:
 
 ```sh
 doit run conversion
