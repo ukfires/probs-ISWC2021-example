@@ -12,7 +12,11 @@ kernelspec:
   name: python3
 ---
 
-# Query results
+# Retrieve original data points
+
+First, let's check we can retrieve the original data points consistently.
+
+## Behind-the-scenes
 
 Python code might be used to perform some operations.
 For instance, the following snippet loads libraries and SPARQL queries, and sends them to RDFox to be answered against the pre-converted data:
@@ -46,9 +50,8 @@ def tidydf(results):
     return df
 ```
 
-## Retrieve original data points
+## BGS Minerals Yearbook
 
-First, let's check we can retrieve the original data points consistently.
 From the BGS Minerals Yearbook:
 
 ```{literalinclude} queries/original_bgs.rq
@@ -58,6 +61,15 @@ From the BGS Minerals Yearbook:
 ```{code-cell} ipython3
 tidydf(results["original_bgs"])
 ```
+
+```{figure} figures/original_bgs.svg
+:name: Original Prodcom
+:width: 100%
+
+All the initial data points from BGS.
+```
+
+## Prodcom
 
 We can also retrieve an original data point from Prodcom linked to a classification code:
 
@@ -69,65 +81,9 @@ We can also retrieve an original data point from Prodcom linked to a classificat
 tidydf(results["original_prodcom"])
 ```
 
-## Inferred observations
+```{figure} figures/original_prodcom.svg
+:name: Original Prodcom
+:width: 100%
 
-Now let's query for all the observations that would be relevant to modelling production of two object types, {system:ref}`CrushedStone` and {system:ref}`SandAndGravel`, in all years that are available.
-
-```{figure} figures/Aggregates_Hierarchy_with_Obs.svg
-:name: Aggregates Hierarchy with Obs
-
-All the observations relevant to `Aggregates` components (`CrushedStone` and `SandAndGravel`).
-```
-
-Here is the SPARQL query:
-
-```{literalinclude} queries/object_observations.rq
-:language: sparql
-```
-
-And the results:
-
-```{code-cell} ipython3
-tidydf(results["object_observations"])
-```
-
-We can see where these values have come from:
-
-```{literalinclude} queries/prov.rq
-:language: sparql
-```
-
-This results in:
-
-```{code-cell} ipython3
-df = tidydf(results["prov"])
-df
-```
-
-It does indeed add up to the values shown above:
-
-```{code-cell} ipython3
-df.groupby("Observation", as_index=False)["WDFValue"].sum()
-```
-
-## Further aggregation
-
-We can further query for the aggregates observations of {system:ref}`Aggregates`:
-
-```{literalinclude} queries/object_observations_aggregates.rq
-:language: sparql
-```
-
-This results in:
-
-```{code-cell} ipython3
-tidydf(results["object_observations_aggregates"])
-```
-
-Exactly as we expected from the observations of its components:
-
-```{figure} figures/Composition_of_Aggregates.svg
-:name: Composition of Aggregates
-
-All the observations of `Aggregates`.
+All the initial data points from Prodcom.
 ```

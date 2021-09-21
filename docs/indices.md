@@ -1,8 +1,9 @@
 # Indices
 
-{ref}`genindex`
+<!-- {ref}`genindex`
 
 {ref}`system-process`
 
-{ref}`system-object`
+{ref}`system-object` -->
 
+[[Add items]]

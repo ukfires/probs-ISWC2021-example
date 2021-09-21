@@ -1,5 +1,10 @@
 - file: intro
+- file: data_model
+- file: processing_pipeline
 - file: datasources
+- file: original_data_points
 - file: object_definitions
-- file: query_results
+- file: composition
+- file: equivalence
+- file: aggregates
 - file: indices

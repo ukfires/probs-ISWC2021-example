@@ -33,6 +33,12 @@ Here are just a few example object types which we might be interested in modelli
 
 ```{figure} figures/Aggregates_Hierarchy.svg
 :name: Aggregates Hierarchy
+:width: 100%
 
 Aggregates Hierarchy.
 ```
+
+Note that these are "new" objects that we have created because they are interesting for our analysys.
+We also call them _Reference Objects_.
+
+[[Add query to retrieve them. Maybe also add query to retrieve all the objects.]]

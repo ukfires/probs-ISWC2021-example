@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="vowlGraph" width="1067" height="730" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(350.38 227.16) scale(.36734)">
+  <g class="linkContainer">
+   <defs>
+    <marker id="marker2" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker5" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker6" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker18" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker19" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker20" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker22" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker27" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker31" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker8" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker32" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker34" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker37" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker38" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker39" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker40" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker42" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker43" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker44" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker45" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker46" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker47" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker48" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker49" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker51" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker52" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker53" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker54" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker58" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker59" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="white" d="m0 0-12 8v-16l12 8" fill="#fff" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker62" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker63" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker64" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker65" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker66" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker67" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker7" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+    <marker id="marker68" markerHeight="10" markerWidth="10" orient="auto" viewBox="-14 -10 28 20">
+     <path class="filled" d="m0 0-12 8v-16l12 8" stroke="#000" stroke-dasharray="100" stroke-width="2"/>
+    </marker>
+   </defs>
+   <g class="link" marker-end="url(#marker2)">
+    <path class="link-path node3 node4 normal" d="m867.21-21.822q37.95-116.66 47.437-145.82 9.4874-29.165 47.437-145.82" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker5)">
+    <path class="link-path node0 normal" d="m348.93 170.3q-9.0463 116.49-42.011 111.55-32.965-4.9445-7.436-118.96" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker6)">
+    <path class="link-path node3 node0 normal" d="m801.3 36.024q-168.22 31.36-210.27 39.2t-210.27 39.2" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker18)">
+    <path class="link-path node14 node0 normal" d="m427.94-239.84q-73.206 109.56-82.601 140.84-9.3949 31.272-11.349 171.88" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker19)">
+    <path class="link-path node12 node10 dotted" d="m1406.5 1182.6q-47.415-94.511-59.268-118.14t-59.268-118.14" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker20)">
+    <path class="link-path node21 node10 dotted" d="m1575.5 949.81q-104.04-16.453-130.05-20.566-26.009-4.1132-130.05-20.566" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker22)">
+    <path class="link-path node3 node23 normal" d="m896.38 2.5733q110.85-59.45 138.57-74.313 27.713-14.863 138.57-74.313" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker27)">
+    <path class="link-path node14 node0 normal" d="m440.19-234.66q-32.588 121.29-41.955 152.29-9.3671 30.997-51.716 157.69" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker31)">
+    <path class="link-path node3 node9 normal" d="m873.45 72.684q72.585 151.74 90.732 189.68 18.146 37.935 90.732 189.68" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker8)">
+    <path class="link-path node25 node0 normal" d="m574.56 328.73q-81.956-68.862-102.44-86.077-20.489-17.215-102.44-86.077" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker32)">
+    <path class="link-path node28 node33 normal" d="m71.55 678.79q16.059 88.347 20.074 110.43 4.0147 22.087 20.074 110.43" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker34)">
+    <path class="link-path node3 node35 normal" d="m881.54-14.489q54.669-74.752 68.336-93.44 13.667-18.688 68.336-93.44" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker37)">
+    <path class="link-path node26 node10 dotted" d="m1536.5 729.94q-91.308 57.444-114.13 71.805t-114.13 71.805" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker38)">
+    <path class="link-path node13 node10 dotted" d="m1189.5 1219.3q25.518-107.57 31.897-134.46 6.3795-26.893 31.897-134.46" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker39)">
+    <path class="link-path node0 node28 normal" d="m306.7 168.81q-88.138 165.91-110.17 207.38t-110.17 207.38" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker40)">
+    <path class="link-path node41 node10 dotted" d="m1040.4 1142.3q75.984-81.698 94.98-102.12 18.996-20.425 94.98-102.12" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker42)">
+    <path class="link-path node25 node3 dotted" d="m643.14 319.96q71.506-100.68 89.383-125.85 17.877-25.17 89.383-125.85" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker43)">
+    <path class="link-path node24 node3 dotted" d="m743.35 294.37q66.008-74.616 75.874-96.373 9.8666-21.757 22.792-121.2" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker44)">
+    <path class="link-path node0 normal" d="m316.22 171.65q-79.93 86.654-102.77 62.378-22.843-24.276 68.508-98.792" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker45)">
+    <path class="link-path node14 normal" d="m403.74-284.51q-108.29-54.813-91.225-83.45t116.82 40.495" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker46)">
+    <path class="link-path node30 node28 dotted" d="m-239.86 505.01q102.03 41.72 127.54 52.15 25.509 10.43 127.54 52.15" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker47)">
+    <path class="link-path node29 node28 dotted" d="m9.9486 971.59q17.907-117.02 22.383-146.28 4.4767-29.256 22.383-146.28" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker48)">
+    <path class="link-path node11 node9 dotted" d="m936.59 787.05q47.22-97.25 59.025-121.56 11.805-24.313 59.025-121.56" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker49)">
+    <path class="link-path node14 node50 normal" d="m466.66-333.16q22.454-85.707 28.067-107.13 5.6134-21.427 28.067-107.13" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker51)">
+    <path class="link-path node17 node15 dotted" d="m-582.38 694.67q92.751 42.264 115.94 52.829 23.188 10.566 115.94 52.829" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker52)">
+    <path class="link-path node16 node15 dotted" d="m-395.26 1110.9q30.338-96.327 37.923-120.41 7.5846-24.082 37.923-120.41" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker53)">
+    <path class="link-path node3 node36 normal" d="m901.49 36.452q122.3 23.883 152.87 29.854 30.575 5.9708 152.87 29.854" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker54)">
+    <path class="link-path node3 node14 normal" d="m811.24-4.7087q-126.92-99.094-158.65-123.87-31.73-24.774-158.65-123.87" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker58)">
+    <path class="link-path node1 node0 dotted" d="m35.542-91.619q101.56 74.128 126.95 92.661t126.95 92.661" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker59)">
+    <path class="link-path node10 node9 dotted" d="m1243.5 854.5q-57.983-124.1-72.479-155.13-14.496-31.026-72.479-155.13" fill="none" stroke="#000" stroke-dasharray="3" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker62)">
+    <path class="link-path node0 node61 normal" d="m282.85 105.92q-78.232-29.222-97.79-36.528-19.558-7.3055-97.79-36.528" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker63)">
+    <path class="link-path node0 node57 normal" d="m280.32 132.12q-81.377 13.508-101.72 16.885-20.344 3.377-101.72 16.885" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker64)">
+    <path class="link-path node28 node15 normal" d="m17.296 652.36q-110.5 58.145-138.13 72.682-27.626 14.536-138.13 72.682" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker65)">
+    <path class="link-path node28 node55 normal" d="m96.028 666.98q55.573 63.461 69.467 79.327 13.893 15.865 69.467 79.327" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker66)">
+    <path class="link-path node24 node3 normal" d="m753.12 304.55q106.65-61.904 116.97-84.615 10.322-22.711-13.752-142.49" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker67)">
+    <path class="link-path node3 node56 normal" d="m902.35 23.605q83.894-5.0628 104.87-6.3285 20.973-1.2657 104.87-6.3285" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker7)">
+    <path class="link-path node24 node0 normal" d="m667.16 309.77q-116.76-64.533-145.95-80.666t-145.95-80.666" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+   <g class="link" marker-end="url(#marker68)">
+    <path class="link-path node14 node60 normal" d="m429.6-328.75q-42.531-79.139-53.163-98.923-10.633-19.785-53.163-98.923" fill="none" stroke="#000" stroke-width="2"/>
+   </g>
+  </g>
+  <g class="labelContainer">
+   <g class="labelGroup" transform="translate(914.65 -167.65)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-38" y="-14" width="76" height="28" fill="#acf">
+      <title>has region</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">has region</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(functional)</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(306.92 281.85)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-74" y="-14" width="148" height="28" fill="#acf">
+      <title>object equivalent to</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">object equivalent to</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(reflexive, symmetric, transitive)</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(591.03 75.223)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-55.5" y="-14" width="111" height="28" fill="#acf">
+      <title>object defined by</title>
+     </rect>
+     <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">object defined by</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(345.34 -99.002)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-35" y="-14" width="70" height="28" fill="#acf">
+      <title>produces</title>
+     </rect>
+     <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">produces</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(1034.9 -71.739)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-48.5" y="-14" width="97" height="28" fill="#acf">
+      <title>part of dataset</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">part of dataset</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(functional)</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(398.24 -82.376)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-37.5" y="-14" width="75" height="28" fill="#acf">
+      <title>consumes</title>
+     </rect>
+     <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">consumes</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(964.18 262.36)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-31.5" y="-14" width="63" height="28" fill="#acf">
+      <title>has role</title>
+     </rect>
+     <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">has role</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(472.12 242.66)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-76" y="-14" width="152" height="28" fill="#acf">
+      <title>object directly defined by</title>
+     </rect>
+     <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">object directly defined by</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(91.624 789.22)">
+    <g class="label">
+     <rect class="datatypeproperty property datatype" x="-54" y="-14" width="108" height="28" fill="#9c6">
+      <title>code description</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">code description</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(functional)</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(949.88 -107.93)">
+    <g class="label">
+     <rect class="datatypeproperty property datatype" x="-47" y="-14" width="94" height="28" fill="#9c6">
+      <title>measurement</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">measurement</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(functional)</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(196.53 376.19)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-70" y="-14" width="140" height="28" fill="#acf">
+      <title>has classification code</title>
+     </rect>
+     <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">has classification code</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(213.45 234.03)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-62" y="-14" width="124" height="28" fill="#acf">
+      <title>object composed of</title>
+     </rect>
+     <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">object composed of</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(312.52 -367.96)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-67" y="-14" width="134" height="28" fill="#acf">
+      <title>process composed of</title>
+     </rect>
+     <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">process composed of</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(494.73 -440.3)">
+    <g class="label">
+     <rect class="datatypeproperty property datatype" x="-48" y="-14" width="96" height="28" fill="#9c6">
+      <title>process name</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">process name</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(functional)</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(1054.4 66.306)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-51" y="-14" width="102" height="28" fill="#acf">
+      <title>has time period</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">has time period</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(functional)</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(652.59 -128.58)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-60.5" y="-14" width="121" height="28" fill="#acf">
+      <title>process defined by</title>
+     </rect>
+     <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">process defined by</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(185.06 69.397)">
+    <g class="label">
+     <rect class="datatypeproperty property datatype" x="-43" y="-14" width="86" height="28" fill="#9c6">
+      <title>object name</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">object name</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(functional)</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(178.59 149.01)">
+    <g class="label">
+     <rect class="datatypeproperty property datatype" x="-57" y="-14" width="114" height="28" fill="#9c6">
+      <title>object description</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">object description</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(functional)</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(-120.83 725.04)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-47" y="-14" width="94" height="28" fill="#acf">
+      <title>belongs to list</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">belongs to list</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(functional)</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(165.49 746.31)">
+    <g class="label">
+     <rect class="datatypeproperty property datatype" x="-40" y="-14" width="80" height="28" fill="#9c6">
+      <title>code name</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">code name</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(functional)</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(870.09 219.94)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-56" y="-14" width="112" height="28" fill="#acf">
+      <title>was derived from</title>
+     </rect>
+     <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">was derived from</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(1007.2 17.276)">
+    <g class="label">
+     <rect class="datatypeproperty property datatype" x="-31" y="-14" width="62" height="28" fill="#9c6">
+      <title>metric</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">metric</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(functional)</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(521.21 229.11)">
+    <g class="label">
+     <rect class="objectproperty property object" x="-77.5" y="-14" width="155" height="28" fill="#acf">
+      <title>object inferred defined by</title>
+     </rect>
+     <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">object inferred defined by</tspan></text>
+    </g>
+   </g>
+   <g class="labelGroup" transform="translate(376.43 -427.68)">
+    <g class="label">
+     <rect class="datatypeproperty property datatype" x="-62" y="-14" width="124" height="28" fill="#9c6">
+      <title>process description</title>
+     </rect>
+     <text class="text" y="-11.296875px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-size="12px">process description</tspan><tspan class="text subtext" x="0" dy="10px" font-size="9px">(functional)</tspan></text>
+    </g>
+   </g>
+  </g>
+  <g class="nodeContainer">
+   <g class="node" transform="translate(330.63 123.77)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Object</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Object</tspan></text>
+   </g>
+   <g class="node" transform="translate(1429.3 1228.2)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Sold production</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Sold production</tspan></text>
+   </g>
+   <g class="node" transform="translate(1177.7 1268.9)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Process output observation</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Process outpu...</tspan></text>
+   </g>
+   <g class="node" transform="translate(453.74 -283.83)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Process</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Process</tspan></text>
+   </g>
+   <g class="node" transform="translate(-304.09 821.47)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Classification code list</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Classification ...</tspan></text>
+   </g>
+   <g class="node" transform="translate(977.87 -361.97)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Region</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Region</tspan></text>
+   </g>
+   <g class="node" transform="translate(1625.9 957.77)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Import</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Import</tspan></text>
+   </g>
+   <g class="node" transform="translate(851.44 26.677)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Observation</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Observation</tspan></text>
+   </g>
+   <g class="node" transform="translate(1579.7 702.78)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Process input</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Process input</tspan></text>
+   </g>
+   <g class="node" transform="translate(1218.5 -170.16)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Dataset</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Dataset</tspan></text>
+   </g>
+   <g class="node" transform="translate(62.429 628.61)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Classification code</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Classification ...</tspan></text>
+   </g>
+   <g class="node" transform="translate(-287.07 485.71)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>COMTRADE classification code</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">COMTRADE c...</tspan></text>
+   </g>
+   <g class="node" transform="translate(-628.79 673.52)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>COMTRADE classification code list</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">COMTRADE c...</tspan></text>
+   </g>
+   <g class="node" transform="translate(244.38 836.39)">
+    <rect class="class datatype" x="-25" y="-10" width="50" height="20" fill="#fc3" stroke="#000" stroke-width="2">
+     <title>string</title>
+    </rect>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">string</tspan></text>
+   </g>
+   <g class="node" transform="translate(1138.1 9.3788)">
+    <rect class="class datatype" x="-25" y="-10" width="50" height="20" fill="#fc3" stroke="#000" stroke-width="2">
+     <title>string</title>
+    </rect>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">string</tspan></text>
+   </g>
+   <g class="node" transform="translate(525.67 -558.4)">
+    <rect class="class datatype" x="-25" y="-10" width="50" height="20" fill="#fc3" stroke="#000" stroke-width="2">
+     <title>string</title>
+    </rect>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">string</tspan></text>
+   </g>
+   <g class="node" transform="translate(914.32 832.92)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Stock</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Stock</tspan></text>
+   </g>
+   <g class="node" transform="translate(113.69 910.64)">
+    <rect class="class datatype" x="-25" y="-10" width="50" height="20" fill="#fc3" stroke="#000" stroke-width="2">
+     <title>string</title>
+    </rect>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">string</tspan></text>
+   </g>
+   <g class="node" transform="translate(1026.1 -212.18)">
+    <rect class="class datatype" x="-31" y="-10" width="62" height="20" fill="#fc3" stroke="#000" stroke-width="2">
+     <title>decimal</title>
+    </rect>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">decimal</tspan></text>
+   </g>
+   <g class="node" transform="translate(317.42 -537.48)">
+    <rect class="class datatype" x="-25" y="-10" width="50" height="20" fill="#fc3" stroke="#000" stroke-width="2">
+     <title>string</title>
+    </rect>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">string</tspan></text>
+   </g>
+   <g class="node" transform="translate(61.335 23.181)">
+    <rect class="class datatype" x="-25" y="-10" width="50" height="20" fill="#fc3" stroke="#000" stroke-width="2">
+     <title>string</title>
+    </rect>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">string</tspan></text>
+   </g>
+   <g class="node" transform="translate(711.8 334.44)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Inferred observation</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Inferred obser...</tspan></text>
+   </g>
+   <g class="node" transform="translate(-410.58 1159.6)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>PRODCOM classification code list</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">PRODCOM cla...</tspan></text>
+   </g>
+   <g class="node" transform="translate(2.2345 1022)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>PRODCOM classification code</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">PRODCOM cla...</tspan></text>
+   </g>
+   <g class="node" transform="translate(1005.6 1179.6)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Export</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Export</tspan></text>
+   </g>
+   <g class="node" transform="translate(-5.6512 -121.69)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>ReferenceObject</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">ReferenceObject</tspan></text>
+   </g>
+   <g class="node" transform="translate(613.61 361.54)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Direct observation</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Direct observa...</tspan></text>
+   </g>
+   <g class="node" transform="translate(50.887 170.21)">
+    <rect class="class datatype" x="-25" y="-10" width="50" height="20" fill="#fc3" stroke="#000" stroke-width="2">
+     <title>string</title>
+    </rect>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">string</tspan></text>
+   </g>
+   <g class="node" transform="translate(1265.1 900.71)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Flow</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Flow</tspan></text>
+   </g>
+   <g class="node" transform="translate(1076.9 498.04)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Role</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Role</tspan></text>
+   </g>
+   <g class="node" transform="translate(1257.3 105.93)">
+    <circle class="class" r="50" fill="#acf" stroke="#000" stroke-width="2">
+     <title>Time period</title>
+    </circle>
+    <text class="text" y="-6.78125px" fill="rgb(0, 0, 0)" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none" text-anchor="middle"><tspan class="text" x="0" dy="12px" font-family="Helvetica, Arial, sans-serif" font-size="12px" pointer-events="none">Time period</tspan></text>
+   </g>
+  </g>
+  <g class="linkContainer hidden-in-export" display="none">
+   <line class="classNodeDragPath hidden" x1="1769.7" x2="1794.3" y1="1228.6" y2="1253.3" stroke="#000" stroke-width="2"/>
+   <line class="classNodeDragPath hidden" stroke="#000" stroke-width="2"/>
+   <line class="classNodeDragPath hidden" stroke="#000" stroke-width="2"/>
+   <line class="hidden" stroke="#000" stroke-width="2"/>
+  </g>
+  <g class="editContainer hidden-in-export" display="none">
+   <g class="node hidden-in-export" display="none">
+    <path class="classDraggerNode hidden" transform="translate(1794.3 1253.3) rotate(225)" d="m20 40c-20-25-20-55 0-80l-60 40z" fill="none" stroke="#000" stroke-width="2"/>
+    <circle class="superHiddenElement superOpacityElement hidden" transform="translate(1794.3 1253.3)" cx="10.607" cy="10.607" r="40"/>
+    <path class="classDraggerNode hidden" d="m61 40c-20-25-20-55 0-80l-60 40z" fill="none" stroke="#000" stroke-width="2"/>
+    <circle class="superHiddenElement superOpacityElement hidden" r="40"/>
+    <path class="classDraggerNode hidden" d="m10 40c-20-25-20-55 0-80-18.823 26.359-46.711 34.877-60 40 13.304 4.9079 41.36 13.746 60 40z" fill="none" stroke="#000" stroke-width="2"/>
+    <circle class="superHiddenElement superOpacityElement hidden" r="40"/>
+   </g>
+   <g class="hidden-in-export hidden addDataPropertyElement" transform="translate(0)" display="none">
+    <circle r="12">
+     <title>Add Datatype Property</title>
+    </circle>
+    <line x1="-8" x2="8" stroke="#000" stroke-width="2">
+     <title>Add Datatype Property</title>
+    </line>
+    <line y1="-8" y2="8" stroke="#000" stroke-width="2">
+     <title>Add Datatype Property</title>
+    </line>
+    <circle class="superHiddenElement superOpacityElement" cx="-7" cy="7" r="15"/>
+   </g>
+   <g class="hidden-in-export hidden deleteParentElement" transform="translate(0)" display="none">
+    <circle r="12">
+     <title>Delete This Node</title>
+    </circle>
+    <line x1="-5" x2="5" y1="-5" y2="5" stroke="#000" stroke-width="2">
+     <title>Delete This Node</title>
+    </line>
+    <line x1="5" x2="-5" y1="-5" y2="5" stroke="#000" stroke-width="2">
+     <title>Delete This Node</title>
+    </line>
+    <circle class="superHiddenElement superOpacityElement" cx="7" cy="-7" r="15"/>
+   </g>
+  </g>
+ </g>
+</svg>
