@@ -48,6 +48,8 @@ def tidydf(results):
     return df
 ```
 
+---
+
 ## Inferred observations
 
 Let's query for all the observations that would be relevant to modelling production of two object types, {system:ref}`CrushedStone` and {system:ref}`SandAndGravel`, in all years that are available.
