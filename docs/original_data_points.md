@@ -50,28 +50,9 @@ def tidydf(results):
     return df
 ```
 
-## BGS Minerals Yearbook
-
-From the BGS Minerals Yearbook:
-
-```{literalinclude} queries/original_bgs.rq
-:language: sparql
-```
-
-```{code-cell} ipython3
-tidydf(results["original_bgs"])
-```
-
-```{figure} figures/original_bgs.svg
-:name: Original Prodcom
-:width: 100%
-
-All the initial data points from BGS.
-```
-
 ## Prodcom
 
-We can also retrieve an original data point from Prodcom linked to a classification code:
+We can retrieve original data points from Prodcom linked to a classification code (`08121230`) using the following SPARQL query:
 
 ```{literalinclude} queries/original_prodcom.rq
 :language: sparql
@@ -81,9 +62,32 @@ We can also retrieve an original data point from Prodcom linked to a classificat
 tidydf(results["original_prodcom"])
 ```
 
+The results are exactly the ones we expect (Figure 3 of the paper):
+
 ```{figure} figures/original_prodcom.svg
 :name: Original Prodcom
 :width: 100%
 
 All the initial data points from Prodcom.
+```
+
+## BGS Minerals Yearbook
+
+If we want to retrieve the data points specific of the BGS Minerals Yearbook dataset mentioned in [[Add reference to data sources page]]:
+
+```{figure} figures/original_bgs.svg
+:name: Original Prodcom
+:width: 100%
+
+All the initial data points from BGS.
+```
+
+We can use the following query:
+
+```{literalinclude} queries/original_bgs.rq
+:language: sparql
+```
+
+```{code-cell} ipython3
+tidydf(results["original_bgs"])
 ```
