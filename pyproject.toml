@@ -12,7 +12,9 @@ jupyter-book = "~=0.10.1"
 pytest = "~=6.2.1"
 sphinx-probs-rdf = "~=0.1.1"
 jupytext = {version = "~=1.10.3", extras = ["myst"]}
-probs_ontology = {version = "~=1.5.2", extras = ["runner"]}
+probs_ontology = {version = "~=1.5.2"}
+probs-runner = "^1.0.0"
+rdfox-runner = ">=0.1.7"
 
 [tool.poetry.dev-dependencies]
 
