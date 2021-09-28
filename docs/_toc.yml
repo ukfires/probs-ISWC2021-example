@@ -1,10 +1,19 @@
 - file: intro
-- file: data_model
-- file: processing_pipeline
-- file: datasources
-- file: original_data_points
-- file: object_definitions
-- file: composition
-- file: equivalence
-- file: aggregates
-- file: indices
+
+- part: Introduction
+  chapters:
+  - file: data_model
+  - file: processing_pipeline
+  - file: datasources
+
+- part: Example queries
+  chapters:
+  - file: original_data_points
+  - file: object_definitions
+  - file: composition
+  - file: equivalence
+  - file: aggregates
+
+- part: Endmatter
+  chapters:
+  - file: indices
