@@ -1,7 +1,11 @@
 # Book settings
 title: Example PRObs system
 author: UK FIRES
+copyright: "2019-2021"
 logo: logo.png
+
+html:
+  favicon: "favicon.png"
 
 latex:
   latex_documents:

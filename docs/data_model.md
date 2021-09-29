@@ -3,7 +3,7 @@ Data model
 
 The data used in this demo are modeled according to the "Physical Resources Observatory" (PRObs) ontology.
 
-```{figure} figures/probs.ttl.svg
+```{figure} figures/probs.svg
 :name: probs-overview
 :width: 100%
 
