@@ -35,6 +35,8 @@ And there is also an Observation for the whole `Crushed stone` Object.
 results["composition_before"]
 ```
 
+[[ Since we only have the "final" data, we need to specify that we want only the "Direct" ones. We should fix this by removing "Direct". ]]
+
 ```{figure} figures/CompositionBefore.svg
 :name: Composition of crushed stone in BGS
 :width: 100%
@@ -57,6 +59,8 @@ We can achieve this using the PCSC "algorithm".
 ```{code-cell} ipython3
 results["composition_after"]
 ```
+
+[[ Since we only have the "final" data, we also get the inferred observations derived using equivalence. ]]
 
 ```{figure} figures/CompositionAfter.svg
 :name: Composition of crushed stone in BGS after applying the PCSC "algorithm"

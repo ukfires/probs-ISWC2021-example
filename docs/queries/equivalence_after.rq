@@ -1,0 +1,10 @@
+PREFIX : <https://ukfires.org/probs/ontology/>
+
+SELECT DISTINCT ?Observation ?EObjectName
+WHERE {
+    ?Object :objectName "Crushed stone" ;
+            :objectEquivalentTo ?EObject .
+  	?EObject :objectName ?EObjectName .
+    ?Observation :objectDefinedBy ?EObject .
+}
+ORDER BY ?EObjectName ?Observation

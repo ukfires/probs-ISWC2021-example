@@ -1,0 +1,10 @@
+PREFIX : <https://ukfires.org/probs/ontology/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+SELECT DISTINCT ?Observation ?WDF
+WHERE {
+    ?Observation :objectInferredDefinedBy [ :objectName "Crushed stone in BGS" ] ;
+                   prov:wasDerivedFrom ?WDF .
+
+}
+ORDER BY ?Observation ?WDF

@@ -50,7 +50,7 @@ All the initial data points from Prodcom.
 If we want to retrieve the data points specific of the BGS Minerals Yearbook dataset mentioned in [[Add reference to data sources page]]:
 
 ```{figure} figures/original_bgs.svg
-:name: Original Prodcom
+:name: Original BGS
 :width: 100%
 
 All the initial data points from BGS.

@@ -1,0 +1,8 @@
+PREFIX : <https://ukfires.org/probs/ontology/>
+
+SELECT DISTINCT ?Observation
+WHERE {
+    ?Object :objectName "Crushed stone in BGS" .
+    ?Observation :objectDefinedBy ?Object .
+}
+ORDER BY ?Observation

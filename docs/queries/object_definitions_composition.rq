@@ -1,0 +1,7 @@
+PREFIX : <https://ukfires.org/probs/ontology/>
+PREFIX ufsys: <http://ukfires.org/probs/system/>
+
+SELECT DISTINCT ?Object
+WHERE {
+    ufsys:Aggregates :objectComposedOf ?Object .
+}

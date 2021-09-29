@@ -32,6 +32,8 @@ Different Object instances may be used in different datasets which in fact refer
 results["equivalence_before"]
 ```
 
+[[ Since we only have the "final" data, we also get the inferred observations derived using equivalence and composition. ]]
+
 ```{figure} figures/EquivalenceBefore.svg
 :name: Equivalence of crushed stone
 :width: 100%
@@ -57,7 +59,7 @@ results["equivalence_after_relation"]
 ```
 
 ```{figure} figures/EquivalenceAfter_relation.svg
-:name: Equivalence of crushed stone
+:name: Equivalence of crushed stone with equivalence relation
 :width: 100%
 
 Extension of the equivalence relation.
@@ -79,8 +81,10 @@ And we should also consider the observations inferred by composition.
 results["equivalence_after_obs3"]
 ```
 
+[[ Again, since we only have the "final" data, we also get the inferred observations derived using equivalence and composition. ]]
+
 ```{figure} figures/EquivalenceAfter_Obs_3.svg
-:name: Equivalence of crushed stone
+:name: Equivalence of crushed stone with inferred observations
 :width: 100%
 
 Direct and inferred observations for `Crushed stone`, `Crushed stone in PRODCOM`, and `Crushed stone in BGS`.
@@ -102,7 +106,7 @@ results["equivalence_after"]
 ```
 
 ```{figure} figures/EquivalenceAfter.svg
-:name: Equivalence of crushed stone
+:name: Equivalence of crushed stone with inferred observations via equivalence
 :width: 100%
 
 Direct and inferred (also via equivalence) observations for `Crushed stone`, `Crushed stone in PRODCOM`, and `Crushed stone in BGS`.
