@@ -18,7 +18,7 @@ First, let's check we can retrieve the original data points consistently.
 
 ## Behind-the-scenes
 
-We start by loading SPARQL queries, and sends them to RDFox to be answered against the pre-converted data. For simplicity the details are hidden in [a separate Python file](example_data.py):
+We start by loading SPARQL queries, and sends them to RDFox to be answered against the pre-converted data. For simplicity the details are hidden in [a separate Python file](https://github.com/ukfires/probs-ISWC2021-example/blob/master/docs/example_data.py):
 
 ```{code-cell} ipython3
 from example_data import results
@@ -47,7 +47,7 @@ All the initial data points from Prodcom.
 
 ## BGS Minerals Yearbook
 
-If we want to retrieve the data points specific of the BGS Minerals Yearbook dataset mentioned in [[Add reference to data sources page]]:
+If we want to retrieve the data points specific of the BGS Minerals Yearbook dataset:
 
 ```{figure} figures/original_bgs.svg
 :name: Original BGS

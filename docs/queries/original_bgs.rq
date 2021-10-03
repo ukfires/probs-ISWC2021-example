@@ -7,7 +7,7 @@ PREFIX ufpc: <https://ukfires.org/probs/ontology/prodcom/>
 SELECT DISTINCT ?ObjectName ?Role ?Value ?Year ?Region ?Metric
 WHERE {
     ?Observation :partOfDataset ufpc:BGSMineralsYearbook2015 ;
-        :objectDefinedBy [ :objectName ?ObjectName ] ;
+        :objectDirectlyDefinedBy [ :objectName ?ObjectName ] ;
         :hasTimePeriod [ time:unitType time:unitYear ; time:year ?Year ] ;
         :hasRegion [ gn:name ?Region] ;
         :hasRole ?Role ;

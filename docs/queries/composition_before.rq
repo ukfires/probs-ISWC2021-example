@@ -10,4 +10,4 @@ WHERE {
     { ?Observation :objectDirectlyDefinedBy ?Object .
         BIND (?Object AS ?OObject) }
 }
-ORDER BY ?OObject ?Observation
+ORDER BY ?Observation ?OObject

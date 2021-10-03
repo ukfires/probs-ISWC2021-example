@@ -24,7 +24,7 @@ from example_data import results
 
 Different Object instances may be used in different datasets which in fact refer to the same type of thing.
 
-```{literalinclude} queries/equivalence_before.rq
+<!-- ```{literalinclude} queries/equivalence_before.rq
 :language: sparql
 ```
 
@@ -32,7 +32,7 @@ Different Object instances may be used in different datasets which in fact refer
 results["equivalence_before"]
 ```
 
-[[ Since we only have the "final" data, we also get the inferred observations derived using equivalence and composition. ]]
+[[ Since we only have the "final" data, we also get the inferred observations derived using equivalence and composition. ]] -->
 
 ```{figure} figures/EquivalenceBefore.svg
 :name: Equivalence of crushed stone
@@ -50,13 +50,13 @@ To allow querying of observations in an uniform way, we want to propagate the ob
 
 First, this is an equivalence relation (it is reflexive, symmetric, and transitive).
 
-```{literalinclude} queries/equivalence_after_relation.rq
+<!-- ```{literalinclude} queries/equivalence_after_relation.rq
 :language: sparql
 ```
 
 ```{code-cell} ipython3
 results["equivalence_after_relation"]
-```
+``` -->
 
 ```{figure} figures/EquivalenceAfter_relation.svg
 :name: Equivalence of crushed stone with equivalence relation
@@ -70,10 +70,9 @@ Extension of the equivalence relation.
 :width: 80%
 ```
 
-And we should also consider the observations inferred by composition.
-[[Add link to composition page]]
+And we should also consider the observations inferred by {doc}`composition<composition>`.
 
-```{literalinclude} queries/equivalence_after_obs3.rq
+<!-- ```{literalinclude} queries/equivalence_after_obs3.rq
 :language: sparql
 ```
 
@@ -81,7 +80,7 @@ And we should also consider the observations inferred by composition.
 results["equivalence_after_obs3"]
 ```
 
-[[ Again, since we only have the "final" data, we also get the inferred observations derived using equivalence and composition. ]]
+[[ Again, since we only have the "final" data, we also get the inferred observations derived using equivalence and composition. ]] -->
 
 ```{figure} figures/EquivalenceAfter_Obs_3.svg
 :name: Equivalence of crushed stone with inferred observations
@@ -104,6 +103,8 @@ We want to propagate observations among all the equivalent objects avoiding dupl
 ```{code-cell} ipython3
 results["equivalence_after"]
 ```
+
+[[We also have additional observations derived using composition]]
 
 ```{figure} figures/EquivalenceAfter.svg
 :name: Equivalence of crushed stone with inferred observations via equivalence
