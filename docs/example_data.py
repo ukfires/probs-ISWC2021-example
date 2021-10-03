@@ -24,11 +24,15 @@ obs_short_labels = {
     "https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-0cefb7bea0582e08d7878e4c3f684c2307edb305bfddd5e3ea6f3efb8f9b02c1-d92d8d1a049b5c171ed7dfde5057cddf9984bb5fdd104af98b622c1be88800a7": "Obs 1",
     "https://ukfires.org/probs/ontology/data/bgs/Observation-c2bb6910b2b19133e460750a4dd799924afd9c4aceae0736aea91635592cd1ff": "Obs 4",
     "https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-00613791c18e3cf39874c66a176e7229189e5fed28a45ef7921e3f97e9143eab-e9398b5c9aa49bcd1b2f0dc8fa74b41a9faa021848620496ad682721f2cf9a27": "Obs 5",
-    "https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-00613791c18e3cf39874c66a176e7229189e5fed28a45ef7921e3f97e9143eab-e53dd7ea6154ae201c77e77a2b7260c5304cfd12b67be85965c4089720d9fa19": "Obs 6"
+    "https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-00613791c18e3cf39874c66a176e7229189e5fed28a45ef7921e3f97e9143eab-e53dd7ea6154ae201c77e77a2b7260c5304cfd12b67be85965c4089720d9fa19": "Obs 6",
+    "https://ukfires.org/probs/ontology/data/bgs/Observation-59b0bb2c5ac81e0a4f8065cede30db3ac72adac049383c1f95204c354fe76459": "Obs A",
+    "https://ukfires.org/probs/ontology/data/bgs/Observation-897e20a96c17d017a9142d1fd4832df34cca88a8920db5156611d05ff4b5775f": "Obs B",
+    "https://ukfires.org/probs/ontology/data/bgs/Observation-2cc32f0cec07ace893b51a0e546f74ca6bc2f7f91f467e4b1fa3e73da9562884": "Obs C",
+
 }
 
 NAMESPACES = {
-    "sys": Namespace("https://ukfires.org/probs/system/"),
+    "sys": Namespace("http://ukfires.org/probs/system/"),
     "": PROBS,
     "rdf": RDF,
     "rdfs": RDFS,
@@ -50,6 +54,8 @@ def tidydf(results):
     # Use abbreviated names for the specific observations, to match the paper
     if "Observation" in df:
         df.Observation = [obs_short_labels.get(str(x), x) for x in df.Observation]
+    if "WDF" in df:
+        df.WDF = [obs_short_labels.get(str(x), x) for x in df.WDF]
 
     # Use SPARQL prefixes
     df = df.applymap(replace_prefixes)
