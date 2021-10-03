@@ -1,9 +1,23 @@
 # Indices
 
-<!-- {ref}`genindex`
+{ref}`intro`
 
-{ref}`system-process`
+## Introduction
 
-{ref}`system-object` -->
+{ref}`data_model`
 
-[[Add items]]
+{ref}`processing_pipeline`
+
+{ref}`datasources`
+
+## Example queries
+
+{ref}`original_data_points`
+
+{ref}`object_definitions`
+
+{ref}`composition`
+
+{ref}`equivalence`
+
+{ref}`aggregates`
