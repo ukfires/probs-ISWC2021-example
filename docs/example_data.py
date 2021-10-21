@@ -56,6 +56,8 @@ def tidydf(results):
         df.Observation = [obs_short_labels.get(str(x), x) for x in df.Observation]
     if "WDF" in df:
         df.WDF = [obs_short_labels.get(str(x), x) for x in df.WDF]
+    if "Year" in df:
+        df.Year = [x.year for x in df.Year]
 
     # Use SPARQL prefixes
     df = df.applymap(replace_prefixes)
