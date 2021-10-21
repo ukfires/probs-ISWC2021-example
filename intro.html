@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -43,16 +43,17 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data sources" href="datasources.html" />
+    <link rel="next" title="Data model" href="data_model.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -71,6 +72,12 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
       
       <h1 class="site-logo" id="site-title">Example PRObs system</h1>
       
@@ -78,7 +85,7 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 current">
@@ -87,10 +94,37 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_model.html">
+   Data model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="processing_pipeline.html">
+   Processing pipeline
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="datasources.html">
    Data sources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Example queries
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="original_data_points.html">
+   Retrieve original data points
   </a>
  </li>
  <li class="toctree-l1">
@@ -99,10 +133,27 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="query_results.html">
-   Query results
+  <a class="reference internal" href="composition.html">
+   Composition
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="equivalence.html">
+   Equivalence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="aggregates.html">
+   Aggregates
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Endmatter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="indices.html">
    Indices
@@ -177,12 +228,14 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#authors">
    Authors
   </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
  </li>
 </ul>
 
@@ -198,7 +251,7 @@
   <div class="section" id="example-probs-system-definitions">
 <h1>Example PRObs system definitions<a class="headerlink" href="#example-probs-system-definitions" title="Permalink to this headline">¶</a></h1>
 <p>This book shows an example of how a system can be modelled with PRObs.</p>
-<p>More information about the PRObs ontology can be found <a class="reference external" href="https://ukfires.github.io/probs-ontology">here</a>.</p>
+<p>This demo includes several use cases: loading and mapping sample datasets into the ontology, retrieving data points with their system context, retrieving inferred observations at aggregated object level, identifying provenance of observations, and more.</p>
 <p>This work is part of the <a class="reference external" href="https://ukfires.org">UK FIRES</a> project.</p>
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
@@ -207,6 +260,10 @@
 <li><p>Carla Saunders</p></li>
 <li><p>Rick Lupton</p></li>
 </ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -235,21 +292,33 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="datasources.html" title="next page">Data sources</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+     <div id="next">
+        <a class="right-next" href="data_model.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Data model</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
           By UK FIRES<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2019-2021.<br/>
       </p>
     </div>
   </footer>
@@ -261,6 +330,6 @@
   
   <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  None
+  
   </body>
 </html>

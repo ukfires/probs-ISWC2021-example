@@ -29,7 +29,7 @@ The Comtrade classification codes and data are loaded and mapped analogously to 
 The [British Geological Survey Minerals Yearbook](https://www2.bgs.ac.uk/mineralsuk/download/ukmy/UKMY2015.pdf) contains data tables for production of various minerals.
 Since unlike Prodcom and Comtrade they are not linked to a systematic classification, we need to define the dataset-specific {term}`Object`s that appear in the data, which will be mapped onto the equivalent reference object names that our model would like to use (defined in {doc}`object_definitions`).
 
-```{system:object} BGSCrushedStone
+<!-- ```{system:object} BGSCrushedStone
 :label: Crushed stone in BGS
 :become_parent: true
 
@@ -57,4 +57,4 @@ The table also includes production of sand and gravel:
 
 ```{system:object} BGSSandAndGravel
 :label: Sand & Gravel in BGS
-```
+``` -->

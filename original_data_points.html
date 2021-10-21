@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Object definitions &#8212; Example PRObs system</title>
+    <title>Retrieve original data points &#8212; Example PRObs system</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Composition" href="composition.html" />
-    <link rel="prev" title="Retrieve original data points" href="original_data_points.html" />
+    <link rel="next" title="Object definitions" href="object_definitions.html" />
+    <link rel="prev" title="Data sources" href="datasources.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -123,13 +123,13 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="original_data_points.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Retrieve original data points
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="object_definitions.html">
    Object definitions
   </a>
  </li>
@@ -200,11 +200,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/object_definitions.ipynb"><button type="button"
+            href="_sources/original_data_points.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/object_definitions.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/original_data_points.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -229,7 +229,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/object_definitions.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/original_data_points.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -246,6 +246,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#behind-the-scenes">
+   Behind-the-scenes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prodcom">
+   Prodcom
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bgs-minerals-yearbook">
+   BGS Minerals Yearbook
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -254,9 +277,12 @@
         
               <div>
                 
-  <div class="section" id="object-definitions">
-<h1>Object definitions<a class="headerlink" href="#object-definitions" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="original_data_points.html"><span class="doc">As before</span></a>, load the query results:</p>
+  <div class="section" id="retrieve-original-data-points">
+<h1>Retrieve original data points<a class="headerlink" href="#retrieve-original-data-points" title="Permalink to this headline">¶</a></h1>
+<p>First, let’s check we can retrieve the original data points consistently.</p>
+<div class="section" id="behind-the-scenes">
+<h2>Behind-the-scenes<a class="headerlink" href="#behind-the-scenes" title="Permalink to this headline">¶</a></h2>
+<p>We start by loading SPARQL queries, and sends them to RDFox to be answered against the pre-converted data. For simplicity the details are hidden in <a class="reference external" href="https://github.com/ukfires/probs-ISWC2021-example/blob/master/docs/example_data.py">a separate Python file</a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">example_data</span> <span class="kn">import</span> <span class="n">results</span>
@@ -264,43 +290,34 @@
 </div>
 </div>
 </div>
-<hr class="docutils" />
-<p>Here are just a few example object types which we might be interested in modelling.</p>
-<div class="toggle object nested-0 system admonition">
-<p class="admonition-title" id="object-Aggregates"><em>Object: </em><code class="sig-name descname">Aggregates</code></p>
-<p></p>
 </div>
-<div class="toggle object nested-1 system admonition">
-<p class="admonition-title" id="object-CrushedStone"><em>Object: </em><code class="sig-name descname">CrushedStone</code><em> / Crushed stone</em></p>
-<p><p>Parent: Aggregates</p>
-</p>
-</div>
-<div class="toggle object nested-1 system admonition">
-<p class="admonition-title" id="object-SandAndGravel"><em>Object: </em><code class="sig-name descname">SandAndGravel</code><em> / Sand &amp; Gravel</em></p>
-<p><p>Parent: Aggregates</p>
-</p>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ending</span> <span class="n">sub</span> <span class="n">objects</span> <span class="n">of</span> <span class="s2">&quot;http://ukfires.org/probs/system/Aggregates&quot;</span>
-</pre></div>
-</div>
-<div class="figure align-default" id="aggregates-hierarchy">
-<a class="reference internal image-reference" href="_images/Aggregates_Hierarchy.svg"><img alt="_images/Aggregates_Hierarchy.svg" src="_images/Aggregates_Hierarchy.svg" width="100%" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Aggregates Hierarchy.</span><a class="headerlink" href="#aggregates-hierarchy" title="Permalink to this image">¶</a></p>
-</div>
-<p>Note that these are “new” objects that we have created because they are interesting for our analysis.
-We also call them <em>Reference Objects</em>.</p>
-<p>We can retrieve them using the following query:</p>
+<div class="section" id="prodcom">
+<h2>Prodcom<a class="headerlink" href="#prodcom" title="Permalink to this headline">¶</a></h2>
+<p>We can retrieve original data points from Prodcom linked to a classification code (<code class="docutils literal notranslate"><span class="pre">08121230</span></code>) using the following SPARQL query:</p>
 <div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">time</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">gn</span><span class="p">:</span> <span class="nl">&lt;http://www.geonames.org/ontology#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">quantitykind</span><span class="p">:</span> <span class="nl">&lt;http://qudt.org/vocab/quantitykind/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">ufpc</span><span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/prodcom/&gt;</span>
 
-<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?Object</span>
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?ObjectName</span> <span class="nv">?Role</span> <span class="nv">?Value</span> <span class="nv">?Dataset</span> <span class="nv">?Year</span> <span class="nv">?Region</span> <span class="nv">?Metric</span>
 <span class="k">WHERE</span> <span class="p">{</span>
-    <span class="nv">?Object</span> <span class="k">a</span> <span class="p">:</span><span class="nt">ReferenceObject</span> <span class="p">.</span>
+    <span class="nv">?Object</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?ObjectName</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">hasClassificationCode</span> <span class="p">[</span> <span class="p">:</span><span class="nt">codeName</span> <span class="s">&quot;08121230&quot;</span> <span class="p">]</span> <span class="p">.</span>
+    <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">objectDefinedBy</span> <span class="nv">?Object</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">hasTimePeriod</span> <span class="p">[</span> <span class="nn">time</span><span class="p">:</span><span class="nt">unitType</span> <span class="nn">time</span><span class="p">:</span><span class="nt">unitYear</span> <span class="p">;</span> <span class="nn">time</span><span class="p">:</span><span class="nt">year</span> <span class="nv">?Year</span> <span class="p">]</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">hasRegion</span> <span class="p">[</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="nv">?Region</span><span class="p">]</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">hasRole</span> <span class="nv">?Role</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">partOfDataset</span> <span class="nv">?Dataset</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">metric</span> <span class="nv">?Metric</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">measurement</span> <span class="nv">?Value</span> <span class="p">.</span>
 <span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?Object</span> <span class="nv">?Year</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;object_definitions&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;original_prodcom&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -323,76 +340,156 @@ We also call them <em>Reference Objects</em>.</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Object</th>
+      <th>ObjectName</th>
+      <th>Role</th>
+      <th>Value</th>
+      <th>Dataset</th>
+      <th>Year</th>
+      <th>Region</th>
+      <th>Metric</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>sys:CrushedStone</td>
+      <td>PRODCOM Object from Code 08121230</td>
+      <td>:SoldProduction</td>
+      <td>60255156000</td>
+      <td>:prodcom/PRODCOM2017DATA</td>
+      <td>2017</td>
+      <td>United Kingdom</td>
+      <td>quantitykind:Mass</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>sys:Aggregates</td>
+      <td>PRODCOM Object from Code 08121230</td>
+      <td>:SoldProduction</td>
+      <td>68391115000</td>
+      <td>:prodcom/PRODCOM2018DATA</td>
+      <td>2018</td>
+      <td>United Kingdom</td>
+      <td>quantitykind:Mass</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The results are exactly the ones we expect (Figure 3 of the paper):</p>
+<div class="figure align-default" id="original-prodcom">
+<a class="reference internal image-reference" href="_images/original_prodcom.svg"><img alt="_images/original_prodcom.svg" src="_images/original_prodcom.svg" width="100%" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">All the initial data points from Prodcom.</span><a class="headerlink" href="#original-prodcom" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="bgs-minerals-yearbook">
+<h2>BGS Minerals Yearbook<a class="headerlink" href="#bgs-minerals-yearbook" title="Permalink to this headline">¶</a></h2>
+<p>If we want to retrieve the data points specific of the BGS Minerals Yearbook dataset:</p>
+<div class="figure align-default" id="original-bgs">
+<a class="reference internal image-reference" href="_images/original_bgs.svg"><img alt="_images/original_bgs.svg" src="_images/original_bgs.svg" width="100%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">All the initial data points from BGS.</span><a class="headerlink" href="#original-bgs" title="Permalink to this image">¶</a></p>
+</div>
+<p>We can use the following query:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">time</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">gn</span><span class="p">:</span> <span class="nl">&lt;http://www.geonames.org/ontology#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">quantitykind</span><span class="p">:</span> <span class="nl">&lt;http://qudt.org/vocab/quantitykind/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">ufpc</span><span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/prodcom/&gt;</span>
+
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?ObjectName</span> <span class="nv">?Role</span> <span class="nv">?Value</span> <span class="nv">?Year</span> <span class="nv">?Region</span> <span class="nv">?Metric</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">partOfDataset</span> <span class="nn">ufpc</span><span class="p">:</span><span class="nt">BGSMineralsYearbook2015</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">objectDirectlyDefinedBy</span> <span class="p">[</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?ObjectName</span> <span class="p">]</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">hasTimePeriod</span> <span class="p">[</span> <span class="nn">time</span><span class="p">:</span><span class="nt">unitType</span> <span class="nn">time</span><span class="p">:</span><span class="nt">unitYear</span> <span class="p">;</span> <span class="nn">time</span><span class="p">:</span><span class="nt">year</span> <span class="nv">?Year</span> <span class="p">]</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">hasRegion</span> <span class="p">[</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="nv">?Region</span><span class="p">]</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">hasRole</span> <span class="nv">?Role</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">metric</span> <span class="nv">?Metric</span> <span class="p">;</span>
+        <span class="p">:</span><span class="nt">measurement</span> <span class="nv">?Value</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?Object</span> <span class="nv">?Year</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;original_bgs&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ObjectName</th>
+      <th>Role</th>
+      <th>Value</th>
+      <th>Year</th>
+      <th>Region</th>
+      <th>Metric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Limestone &amp; Dolomite in BGS</td>
+      <td>:SoldProduction</td>
+      <td>5.300000e+10</td>
+      <td>2014</td>
+      <td>United Kingdom</td>
+      <td>quantitykind:Mass</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sand &amp; Gravel in BGS</td>
+      <td>:SoldProduction</td>
+      <td>5.600000e+10</td>
+      <td>2014</td>
+      <td>United Kingdom</td>
+      <td>quantitykind:Mass</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>sys:SandAndGravel</td>
+      <td>Crushed stone in BGS</td>
+      <td>:SoldProduction</td>
+      <td>9.900000e+10</td>
+      <td>2014</td>
+      <td>United Kingdom</td>
+      <td>quantitykind:Mass</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Sandstone in BGS</td>
+      <td>:SoldProduction</td>
+      <td>1.000000e+10</td>
+      <td>2014</td>
+      <td>United Kingdom</td>
+      <td>quantitykind:Mass</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Igneous rock in BGS</td>
+      <td>:SoldProduction</td>
+      <td>3.800000e+10</td>
+      <td>2014</td>
+      <td>United Kingdom</td>
+      <td>quantitykind:Mass</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>And we can see the components of <code class="docutils literal notranslate"><span class="pre">Aggregates</span></code> with this query:</p>
-<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
-<span class="k">PREFIX</span> <span class="nn">ufsys</span><span class="p">:</span> <span class="nl">&lt;http://ukfires.org/probs/system/&gt;</span>
-
-<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?Object</span>
-<span class="k">WHERE</span> <span class="p">{</span>
-    <span class="nn">ufsys</span><span class="p">:</span><span class="nt">Aggregates</span> <span class="p">:</span><span class="nt">objectComposedOf</span> <span class="nv">?Object</span> <span class="p">.</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;object_definitions_composition&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Object</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>sys:CrushedStone</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>sys:SandAndGravel</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 
@@ -426,19 +523,19 @@ We also call them <em>Reference Objects</em>.</p>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="original_data_points.html" title="previous page">
+        <a class="left-prev" href="datasources.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Retrieve original data points</p>
+                <p class="prevnext-title">Data sources</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="composition.html" title="next page">
+        <a class="right-next" href="object_definitions.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Composition</p>
+                <p class="prevnext-title">Object definitions</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

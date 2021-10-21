@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Query results &#8212; Example PRObs system</title>
+    <title>Aggregates &#8212; Example PRObs system</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -43,17 +43,18 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Indices" href="indices.html" />
-    <link rel="prev" title="Object definitions" href="object_definitions.html" />
+    <link rel="prev" title="Equivalence" href="equivalence.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -72,6 +73,12 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
       
       <h1 class="site-logo" id="site-title">Example PRObs system</h1>
       
@@ -79,7 +86,7 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -88,10 +95,37 @@
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<p class="caption">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_model.html">
+   Data model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="processing_pipeline.html">
+   Processing pipeline
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="datasources.html">
    Data sources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Example queries
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="original_data_points.html">
+   Retrieve original data points
   </a>
  </li>
  <li class="toctree-l1">
@@ -99,11 +133,28 @@
    Object definitions
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Query results
+ <li class="toctree-l1">
+  <a class="reference internal" href="composition.html">
+   Composition
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="equivalence.html">
+   Equivalence
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Aggregates
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Endmatter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="indices.html">
    Indices
@@ -149,11 +200,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/query_results.ipynb"><button type="button"
+            href="_sources/aggregates.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/query_results.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/aggregates.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -178,7 +229,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/query_results.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/aggregates.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -198,13 +249,8 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#retrieve-original-data-points">
-   Retrieve original data points
-  </a>
- </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#inferred-observations">
    Inferred observations
@@ -226,196 +272,23 @@
         
               <div>
                 
-  <div class="section" id="query-results">
-<h1>Query results<a class="headerlink" href="#query-results" title="Permalink to this headline">¶</a></h1>
-<p>Python code might be used to perform some operations.
-For instance, the following snippet loads libraries and SPARQL queries, and sends them to RDFox to be answered against the pre-converted data:</p>
+  <div class="section" id="aggregates">
+<h1>Aggregates<a class="headerlink" href="#aggregates" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="original_data_points.html"><span class="doc">As before</span></a>, load the query results:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">probs_ontology.runner.probs_runner</span> <span class="kn">import</span> <span class="n">probs_query_data</span>
-
-<span class="n">queries</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">stem</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;queries&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.rq&quot;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">results</span> <span class="o">=</span> <span class="n">probs_query_data</span><span class="p">(</span><span class="s2">&quot;../data/probs_data.nt.gz&quot;</span><span class="p">,</span> <span class="n">queries</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">example_data</span> <span class="kn">import</span> <span class="n">results</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obs_short_labels</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;https://ukfires.org/probs/ontology/data/bgs/Observation-29cc1ee823612f1307925b7c5b003feb9668a06cb991da0b6b9af30033fde2a0&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 2&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;https://ukfires.org/probs/ontology/ComposedInferredObservation--7af16db03ac2ac2a9a773645b069b7dacffa239f5b98b9887fa4a0323b787ce7&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 3&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-0cefb7bea0582e08d7878e4c3f684c2307edb305bfddd5e3ea6f3efb8f9b02c1-d92d8d1a049b5c171ed7dfde5057cddf9984bb5fdd104af98b622c1be88800a7&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 1&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;https://ukfires.org/probs/ontology/data/bgs/Observation-c2bb6910b2b19133e460750a4dd799924afd9c4aceae0736aea91635592cd1ff&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 4&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-00613791c18e3cf39874c66a176e7229189e5fed28a45ef7921e3f97e9143eab-e9398b5c9aa49bcd1b2f0dc8fa74b41a9faa021848620496ad682721f2cf9a27&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 5&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;https://ukfires.org/probs/ontology/ComposedInferredObservation-prodcom/2017/Object-00613791c18e3cf39874c66a176e7229189e5fed28a45ef7921e3f97e9143eab-e53dd7ea6154ae201c77e77a2b7260c5304cfd12b67be85965c4089720d9fa19&quot;</span><span class="p">:</span> <span class="s2">&quot;Obs 6&quot;</span>
-<span class="p">}</span>
-<span class="k">def</span> <span class="nf">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s2">&quot;Observation&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="p">:</span>
-        <span class="n">df</span><span class="o">.</span><span class="n">Observation</span> <span class="o">=</span> <span class="p">[</span><span class="n">obs_short_labels</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">Observation</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">df</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="retrieve-original-data-points">
-<h2>Retrieve original data points<a class="headerlink" href="#retrieve-original-data-points" title="Permalink to this headline">¶</a></h2>
-<p>First, let’s check we can retrieve the original data points consistently.
-From the BGS Minerals Yearbook:</p>
-<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
-<span class="k">PREFIX</span> <span class="nn">ufpc</span><span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/prodcom/&gt;</span>
-<span class="k">PREFIX</span> <span class="nn">time</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span>
-
-<span class="k">SELECT</span> <span class="nv">?Object</span> <span class="nv">?Year</span> <span class="nv">?Value</span>
-<span class="k">WHERE</span> <span class="p">{</span>
-  <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">partOfDataset</span> <span class="nn">ufpc</span><span class="p">:</span><span class="nt">BGSMineralsYearbook2015</span> <span class="p">;</span>
-               <span class="p">:</span><span class="nt">objectDefinedBy</span> <span class="p">[</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?Object</span> <span class="p">]</span> <span class="p">;</span>
-               <span class="p">:</span><span class="nt">hasTimePeriod</span> <span class="p">[</span> <span class="nn">time</span><span class="p">:</span><span class="nt">year</span> <span class="nv">?Year</span> <span class="p">]</span> <span class="p">;</span>
-               <span class="p">:</span><span class="nt">measurement</span> <span class="nv">?Value</span> <span class="p">.</span>
-  <span class="k">FILTER</span><span class="p">(</span> <span class="nf">STRENDS</span><span class="p">(</span><span class="nv">?Object</span><span class="p">,</span> <span class="s">&quot;in BGS&quot;</span><span class="p">)</span> <span class="p">)</span>
-<span class="p">}</span>
-<span class="k">ORDER BY</span> <span class="nv">?Object</span> <span class="nv">?Year</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;original_bgs&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Object</th>
-      <th>Year</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Crushed stone in BGS</td>
-      <td>2014-01-01</td>
-      <td>9.900000e+10</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Igneous rock in BGS</td>
-      <td>2014-01-01</td>
-      <td>3.800000e+10</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Limestone &amp; Dolomite in BGS</td>
-      <td>2014-01-01</td>
-      <td>5.300000e+10</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Sand &amp; Gravel in BGS</td>
-      <td>2014-01-01</td>
-      <td>5.600000e+10</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Sandstone in BGS</td>
-      <td>2014-01-01</td>
-      <td>1.000000e+10</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>We can also retrieve an original data point from Prodcom linked to a classification code:</p>
-<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
-<span class="k">PREFIX</span> <span class="nn">time</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span>
-
-<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?Object</span> <span class="nv">?Year</span> <span class="nv">?Value</span>
-<span class="k">WHERE</span> <span class="p">{</span>
-  <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">objectDefinedBy</span> <span class="p">[</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?Object</span> <span class="p">]</span> <span class="p">;</span>
-               <span class="p">:</span><span class="nt">hasTimePeriod</span> <span class="p">[</span> <span class="nn">time</span><span class="p">:</span><span class="nt">year</span> <span class="nv">?Year</span> <span class="p">]</span> <span class="p">;</span>
-               <span class="p">:</span><span class="nt">measurement</span> <span class="nv">?Value</span> <span class="p">.</span>
-  <span class="k">FILTER</span><span class="p">(</span> <span class="nv">?Object</span> <span class="o">=</span> <span class="s">&quot;PRODCOM Object from Code 08121210&quot;</span> <span class="p">)</span>
-<span class="p">}</span>
-<span class="k">ORDER BY</span> <span class="nv">?Object</span> <span class="nv">?Year</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;original_prodcom&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Object</th>
-      <th>Year</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>PRODCOM Object from Code 08121210</td>
-      <td>2014-01-01</td>
-      <td>24192579000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>PRODCOM Object from Code 08121210</td>
-      <td>2017-01-01</td>
-      <td>31355644000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</div>
+<hr class="docutils" />
 <div class="section" id="inferred-observations">
 <h2>Inferred observations<a class="headerlink" href="#inferred-observations" title="Permalink to this headline">¶</a></h2>
-<p>Now let’s query for all the observations that would be relevant to modelling production of two object types, <a class="reference internal" href="object_definitions.html#object-CrushedStone" title="object-CrushedStone"><code class="xref system system-ref docutils literal notranslate"><span class="pre">CrushedStone</span></code></a> and <a class="reference internal" href="object_definitions.html#object-SandAndGravel" title="object-SandAndGravel"><code class="xref system system-ref docutils literal notranslate"><span class="pre">SandAndGravel</span></code></a>, in all years that are available.</p>
+<p>Let’s query for all the observations that would be relevant to modelling production of two object types, <a class="reference internal" href="object_definitions.html#object-CrushedStone" title="object-CrushedStone"><code class="xref system system-ref docutils literal notranslate"><span class="pre">CrushedStone</span></code></a> and <a class="reference internal" href="object_definitions.html#object-SandAndGravel" title="object-SandAndGravel"><code class="xref system system-ref docutils literal notranslate"><span class="pre">SandAndGravel</span></code></a>, in all years that are available.</p>
 <div class="figure align-default" id="aggregates-hierarchy-with-obs">
-<img alt="_images/Aggregates_Hierarchy_with_Obs.svg" src="_images/Aggregates_Hierarchy_with_Obs.svg" /><p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">All the observations relevant to <code class="docutils literal notranslate"><span class="pre">Aggregates</span></code> components (<code class="docutils literal notranslate"><span class="pre">CrushedStone</span></code> and <code class="docutils literal notranslate"><span class="pre">SandAndGravel</span></code>).</span><a class="headerlink" href="#aggregates-hierarchy-with-obs" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="_images/Aggregates_Hierarchy_with_Obs.svg"><img alt="_images/Aggregates_Hierarchy_with_Obs.svg" src="_images/Aggregates_Hierarchy_with_Obs.svg" width="100%" /></a>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">All the observations relevant to <code class="docutils literal notranslate"><span class="pre">Aggregates</span></code> components (<code class="docutils literal notranslate"><span class="pre">CrushedStone</span></code> and <code class="docutils literal notranslate"><span class="pre">SandAndGravel</span></code>).</span><a class="headerlink" href="#aggregates-hierarchy-with-obs" title="Permalink to this image">¶</a></p>
 </div>
 <p>Here is the SPARQL query:</p>
 <div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
@@ -439,7 +312,7 @@ From the BGS Minerals Yearbook:</p>
 <p>And the results:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;object_observations&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;object_observations&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -474,40 +347,40 @@ From the BGS Minerals Yearbook:</p>
       <th>0</th>
       <td>Obs 3</td>
       <td>Crushed stone</td>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>2014</td>
+      <td>:ExactBound</td>
       <td>101000000000.0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Obs 2</td>
       <td>Crushed stone</td>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>2014</td>
+      <td>:ExactBound</td>
       <td>99000000000.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Obs 1</td>
       <td>Crushed stone</td>
-      <td>2018-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>2018</td>
+      <td>:ExactBound</td>
       <td>69722551000</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Obs 5</td>
       <td>Sand &amp; Gravel</td>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>2014</td>
+      <td>:ExactBound</td>
       <td>51010054000</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Obs 4</td>
       <td>Sand &amp; Gravel</td>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>2014</td>
+      <td>:ExactBound</td>
       <td>56000000000.0</td>
     </tr>
   </tbody>
@@ -541,8 +414,7 @@ From the BGS Minerals Yearbook:</p>
 <p>This results in:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;prov&quot;</span><span class="p">])</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;prov&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -638,7 +510,7 @@ From the BGS Minerals Yearbook:</p>
 <p>It does indeed add up to the values shown above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Observation&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;WDFValue&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;prov&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Observation&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;WDFValue&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -720,7 +592,7 @@ From the BGS Minerals Yearbook:</p>
 <p>This results in:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tidydf</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;object_observations_aggregates&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;object_observations_aggregates&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -751,32 +623,32 @@ From the BGS Minerals Yearbook:</p>
   <tbody>
     <tr>
       <th>0</th>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>2014</td>
+      <td>:ExactBound</td>
       <td>157000000000.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>2014</td>
+      <td>:ExactBound</td>
       <td>150010054000.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>2014</td>
+      <td>:ExactBound</td>
       <td>152010054000.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2014-01-01</td>
-      <td>https://ukfires.org/probs/ontology/ExactBound</td>
+      <td>2014</td>
+      <td>:ExactBound</td>
       <td>155000000000.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2018-01-01</td>
-      <td>https://ukfires.org/probs/ontology/LowerBound</td>
+      <td>2018</td>
+      <td>:LowerBound</td>
       <td>69722551000</td>
     </tr>
   </tbody>
@@ -785,7 +657,8 @@ From the BGS Minerals Yearbook:</p>
 </div>
 <p>Exactly as we expected from the observations of its components:</p>
 <div class="figure align-default" id="composition-of-aggregates">
-<img alt="_images/Composition_of_Aggregates.svg" src="_images/Composition_of_Aggregates.svg" /><p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">All the observations of <code class="docutils literal notranslate"><span class="pre">Aggregates</span></code>.</span><a class="headerlink" href="#composition-of-aggregates" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="_images/Composition_of_Aggregates.svg"><img alt="_images/Composition_of_Aggregates.svg" src="_images/Composition_of_Aggregates.svg" width="100%" /></a>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">All the observations of <code class="docutils literal notranslate"><span class="pre">Aggregates</span></code>.</span><a class="headerlink" href="#composition-of-aggregates" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -813,22 +686,42 @@ From the BGS Minerals Yearbook:</p>
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="object_definitions.html" title="previous page">Object definitions</a>
-    <a class='right-next' id="next-link" href="indices.html" title="next page">Indices</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="equivalence.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Equivalence</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="indices.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Indices</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
           By UK FIRES<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2019-2021.<br/>
       </p>
     </div>
   </footer>
@@ -840,6 +733,6 @@ From the BGS Minerals Yearbook:</p>
   
   <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  None
+  
   </body>
 </html>
