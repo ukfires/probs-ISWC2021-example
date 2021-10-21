@@ -3,6 +3,6 @@ PREFIX prov: <http://www.w3.org/ns/prov#>
 
 SELECT DISTINCT ?Observation
 WHERE {
-    ?Observation :objectDefinedBy [ :objectName "Crushed stone in BGS" ] .
+    ?Observation :objectInferredDefinedBy [ :objectName "Crushed stone in BGS" ] . # prov:wasDerivedFrom [ :objectDefinedBy [ :objectName "Sandstone in BGS" ] ] .
 }
 ORDER BY ?Observation

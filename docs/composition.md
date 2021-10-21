@@ -60,6 +60,8 @@ We can achieve this using the PCSC "algorithm".
 results["composition_after"]
 ```
 
+[[We also have additional observations inferred using equivalence.]]
+
 <!-- [[ Since we only have the "final" data, we also get the inferred observations derived using equivalence. ]] -->
 
 ```{figure} figures/CompositionAfter.svg
@@ -73,8 +75,6 @@ Direct and inferred observations for the components of `Crushed stone in BGS`.
 :figclass: margin
 :width: 80%
 ```
-
-[[We also have additional observations derived using equivalence.]]
 
 And identify the observations that have been aggregated to create `Obs 3`:
 

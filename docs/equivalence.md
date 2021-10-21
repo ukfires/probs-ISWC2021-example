@@ -104,7 +104,7 @@ We want to propagate observations among all the equivalent objects avoiding dupl
 results["equivalence_after"]
 ```
 
-[[We also have additional observations derived using composition]]
+[[We also have additional observations inferred using composition.]]
 
 ```{figure} figures/EquivalenceAfter.svg
 :name: Equivalence of crushed stone with inferred observations via equivalence
