@@ -46,17 +46,23 @@ Initial observations for `Crushed stone`, `Crushed stone in PRODCOM`, and `Crush
 :width: 80%
 ```
 
-To allow querying of observations in an uniform way, we want to propagate the observation to all the equivalent objects.
+To allow querying of observations in a uniform way, we want to propagate the observation to all the equivalent objects.
 
 First, this is an equivalence relation (it is reflexive, symmetric, and transitive).
 
-<!-- ```{literalinclude} queries/equivalence_after_relation.rq
+```{literalinclude} queries/equivalence_after_relation.rq
 :language: sparql
 ```
 
+````{margin}
+```{note}
+We also have the observations for the other loaded dataset (COMTRADE), which have been omitted in the figure to make it more readable.
+```
+````
+
 ```{code-cell} ipython3
 results["equivalence_after_relation"]
-``` -->
+```
 
 ```{figure} figures/EquivalenceAfter_relation.svg
 :name: Equivalence of crushed stone with equivalence relation
