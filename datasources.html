@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -265,9 +265,9 @@
 <p>The <a class="reference external" href="https://ec.europa.eu/eurostat/web/prodcom">Prodcom</a> database provides statistics on the production of goods and materials within the EU, published by Eurostat.
 The data is organised according the <a class="reference external" href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM&amp;StrGroupCode=CLASSIFIC&amp;StrLanguageCode=EN&amp;IntFamilyCode=&amp;TxtSearch=prodcom&amp;IntCurrentPage=1">PRODCOM list</a> classification system, and includes both physical production (e.g. by mass or by volume) and the economic value of the goods sold.</p>
 <p>To access this data, we <a class="reference external" href="https://github.com/ukfires/probs-ontology-example/blob/master/datasources/prodcom/load_data.rdfox#L1-L79">load the classification system into RDFox</a> and <a class="reference external" href="https://github.com/ukfires/probs-ontology-example/blob/master/datasources/prodcom/map.dlog">map it into RDF</a>.
-This creates <span class="xref std std-term">Object</span>s for every classification code item, named <code class="docutils literal notranslate"><span class="pre">PRODCOM</span> <span class="pre">Object</span> <span class="pre">from</span> <span class="pre">Code</span> <span class="pre">XXXXXXXX</span></code>.</p>
-<p>The data for each classification code is then <a class="reference external" href="https://github.com/ukfires/probs-ontology-example/blob/master/datasources/prodcom/load_data.rdfox#L81-L154">loaded similarly</a> and <a class="reference external" href="https://github.com/ukfires/probs-ontology-example/blob/master/datasources/prodcom/map.dlog">mapped</a> to create <span class="xref std std-term">DirectObservation</span>s corresponding to each classification code.</p>
-<p>See <span class="xref std std-doc">query_results</span> for example query results showing how the raw data is retrieved as RDF.</p>
+This creates <code class="docutils literal notranslate"><span class="pre">Object</span></code>s for every classification code item, named <code class="docutils literal notranslate"><span class="pre">PRODCOM</span> <span class="pre">Object</span> <span class="pre">from</span> <span class="pre">Code</span> <span class="pre">XXXXXXXX</span></code>.</p>
+<p>The data for each classification code is then <a class="reference external" href="https://github.com/ukfires/probs-ontology-example/blob/master/datasources/prodcom/load_data.rdfox#L81-L154">loaded similarly</a> and <a class="reference external" href="https://github.com/ukfires/probs-ontology-example/blob/master/datasources/prodcom/map.dlog">mapped</a> to create <code class="docutils literal notranslate"><span class="pre">DirectObservation</span></code>s corresponding to each classification code.</p>
+<p>See <a class="reference internal" href="original_data_points.html"><span class="doc">Retrieve original data points</span></a> for example query results showing how the raw data is retrieved as RDF.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For illustrative purposes, two pieces of Prodcom data have been removed from the 2018 dataset (codes <code class="docutils literal notranslate"><span class="pre">08.12.11.90</span></code> and <code class="docutils literal notranslate"><span class="pre">08.12.12.10</span></code>, corresponding to “sand &amp; gravel” in the later example). This is done firstly to simplify the number of inferred observations, and secondly to include an incomplete lower-bound observation in the results.</p>
@@ -281,7 +281,7 @@ This creates <span class="xref std std-term">Object</span>s for every classifica
 <div class="section" id="bgs-minerals-yearbook">
 <h2>BGS Minerals Yearbook<a class="headerlink" href="#bgs-minerals-yearbook" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://www2.bgs.ac.uk/mineralsuk/download/ukmy/UKMY2015.pdf">British Geological Survey Minerals Yearbook</a> contains data tables for production of various minerals.
-Since unlike Prodcom and Comtrade they are not linked to a systematic classification, we need to define the dataset-specific <span class="xref std std-term">Object</span>s that appear in the data, which will be mapped onto the equivalent reference object names that our model would like to use (defined in <a class="reference internal" href="object_definitions.html"><span class="doc">Object definitions</span></a>).</p>
+Since unlike Prodcom and Comtrade they are not linked to a systematic classification, we need to define the dataset-specific <code class="docutils literal notranslate"><span class="pre">Object</span></code>s that appear in the data, which will be mapped onto the equivalent reference object names that our model would like to use (defined in <a class="reference internal" href="object_definitions.html"><span class="doc">Object definitions</span></a>).</p>
 <!-- ```{system:object} BGSCrushedStone
 :label: Crushed stone in BGS
 :become_parent: true

@@ -8,11 +8,11 @@ The [Prodcom](https://ec.europa.eu/eurostat/web/prodcom) database provides stati
 The data is organised according the [PRODCOM list](https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM&StrGroupCode=CLASSIFIC&StrLanguageCode=EN&IntFamilyCode=&TxtSearch=prodcom&IntCurrentPage=1) classification system, and includes both physical production (e.g. by mass or by volume) and the economic value of the goods sold.
 
 To access this data, we [load the classification system into RDFox](https://github.com/ukfires/probs-ontology-example/blob/master/datasources/prodcom/load_data.rdfox#L1-L79) and [map it into RDF](https://github.com/ukfires/probs-ontology-example/blob/master/datasources/prodcom/map.dlog).
-This creates {term}`Object`s for every classification code item, named `PRODCOM Object from Code XXXXXXXX`.
+This creates `Object`s for every classification code item, named `PRODCOM Object from Code XXXXXXXX`.
 
-The data for each classification code is then [loaded similarly](https://github.com/ukfires/probs-ontology-example/blob/master/datasources/prodcom/load_data.rdfox#L81-L154) and [mapped](https://github.com/ukfires/probs-ontology-example/blob/master/datasources/prodcom/map.dlog) to create {term}`DirectObservation`s corresponding to each classification code.
+The data for each classification code is then [loaded similarly](https://github.com/ukfires/probs-ontology-example/blob/master/datasources/prodcom/load_data.rdfox#L81-L154) and [mapped](https://github.com/ukfires/probs-ontology-example/blob/master/datasources/prodcom/map.dlog) to create `DirectObservation`s corresponding to each classification code.
 
-See {doc}`query_results` for example query results showing how the raw data is retrieved as RDF.
+See {doc}`original_data_points` for example query results showing how the raw data is retrieved as RDF.
 
 ```{note}
 For illustrative purposes, two pieces of Prodcom data have been removed from the 2018 dataset (codes `08.12.11.90` and `08.12.12.10`, corresponding to "sand & gravel" in the later example). This is done firstly to simplify the number of inferred observations, and secondly to include an incomplete lower-bound observation in the results.
@@ -27,7 +27,7 @@ The Comtrade classification codes and data are loaded and mapped analogously to 
 ## BGS Minerals Yearbook
 
 The [British Geological Survey Minerals Yearbook](https://www2.bgs.ac.uk/mineralsuk/download/ukmy/UKMY2015.pdf) contains data tables for production of various minerals.
-Since unlike Prodcom and Comtrade they are not linked to a systematic classification, we need to define the dataset-specific {term}`Object`s that appear in the data, which will be mapped onto the equivalent reference object names that our model would like to use (defined in {doc}`object_definitions`).
+Since unlike Prodcom and Comtrade they are not linked to a systematic classification, we need to define the dataset-specific `Object`s that appear in the data, which will be mapped onto the equivalent reference object names that our model would like to use (defined in {doc}`object_definitions`).
 
 <!-- ```{system:object} BGSCrushedStone
 :label: Crushed stone in BGS

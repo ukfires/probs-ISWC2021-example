@@ -1,23 +1,5 @@
 # Indices
 
-{ref}`intro`
+<!-- This is the automatically-generated index of Objects defined in the book. -->
 
-## Introduction
-
-{ref}`data_model`
-
-{ref}`processing_pipeline`
-
-{ref}`datasources`
-
-## Example queries
-
-{ref}`original_data_points`
-
-{ref}`object_definitions`
-
-{ref}`composition`
-
-{ref}`equivalence`
-
-{ref}`aggregates`
+{ref}`system-object`
