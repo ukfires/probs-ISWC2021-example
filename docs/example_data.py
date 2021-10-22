@@ -54,8 +54,12 @@ def tidydf(results):
     # Use abbreviated names for the specific observations, to match the paper
     if "Observation" in df:
         df.Observation = [obs_short_labels.get(str(x), x) for x in df.Observation]
-    if "WDF" in df:
-        df.WDF = [obs_short_labels.get(str(x), x) for x in df.WDF]
+    # if "DirectObservation" in df:
+    #     df.DirectObservation = [obs_short_labels.get(str(x), x) for x in df.DirectObservation]
+    # if "InferredObservation" in df:
+    #     df.InferredObservation = [obs_short_labels.get(str(x), x) for x in df.InferredObservation]
+    if "WasDerivedFrom" in df:
+        df.WasDerivedFrom = [obs_short_labels.get(str(x), x) for x in df.WasDerivedFrom]
     if "Year" in df:
         df.Year = [x.year for x in df.Year]
 

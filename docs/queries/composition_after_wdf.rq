@@ -1,10 +1,10 @@
 PREFIX : <https://ukfires.org/probs/ontology/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 
-SELECT DISTINCT ?WDF
+SELECT DISTINCT ?WasDerivedFrom
 WHERE {
-    :ComposedInferredObservation--7af16db03ac2ac2a9a773645b069b7dacffa239f5b98b9887fa4a0323b787ce7
-                   prov:wasDerivedFrom ?WDF .
-    ?WDF a :DirectObservation .
+    :ComposedInferredObservation--7af16db03ac2ac2a9a773645b069b7dacffa239f5b98b9887fa4a0323b787ce7 # IRI of "Obs 3"
+                   prov:wasDerivedFrom ?WasDerivedFrom .
+    ?WasDerivedFrom a :DirectObservation .
 }
-ORDER BY ?WDF
+ORDER BY ?WasDerivedFrom
