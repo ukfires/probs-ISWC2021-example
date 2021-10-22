@@ -282,15 +282,141 @@ results["equivalence_before"]
 <div class="margin figure align-default">
 <a class="reference internal image-reference" href="_images/CE-Legend_vertical.svg"><img alt="_images/CE-Legend_vertical.svg" src="_images/CE-Legend_vertical.svg" width="80%" /></a>
 </div>
-<p>To allow querying of observations in an uniform way, we want to propagate the observation to all the equivalent objects.</p>
+<p>To allow querying of observations in a uniform way, we want to propagate the observation to all the equivalent objects.</p>
 <p>First, this is an equivalence relation (it is reflexive, symmetric, and transitive).</p>
-<!-- ```{literalinclude} queries/equivalence_after_relation.rq
-:language: sparql
-```
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
 
-```{code-cell} ipython3
-results["equivalence_after_relation"]
-``` -->
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?ObjectName1</span> <span class="nv">?ObjectName2</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nv">?Object</span> <span class="p">:</span><span class="nt">objectName</span> <span class="s">&quot;Crushed stone&quot;</span> <span class="p">;</span>
+            <span class="p">:</span><span class="nt">objectEquivalentTo</span> <span class="nv">?EObject</span> <span class="p">.</span>
+    <span class="nv">?EObject</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?ObjectName1</span> <span class="p">;</span>
+            <span class="p">:</span><span class="nt">objectEquivalentTo</span> <span class="p">[</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?ObjectName2</span> <span class="p">]</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?ObjectName1</span> <span class="nv">?ObjectName2</span>
+</pre></div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We also have the observations for the other loaded dataset (COMTRADE), which have been omitted in the figure to make it more readable.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;equivalence_after_relation&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ObjectName1</th>
+      <th>ObjectName2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Crushed stone</td>
+      <td>Crushed stone</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Crushed stone</td>
+      <td>Crushed stone in BGS</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Crushed stone</td>
+      <td>CrushedStone in COMTRADE 2017</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Crushed stone</td>
+      <td>CrushedStone in PRODCOM 2017</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Crushed stone in BGS</td>
+      <td>Crushed stone</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Crushed stone in BGS</td>
+      <td>Crushed stone in BGS</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Crushed stone in BGS</td>
+      <td>CrushedStone in COMTRADE 2017</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Crushed stone in BGS</td>
+      <td>CrushedStone in PRODCOM 2017</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>CrushedStone in COMTRADE 2017</td>
+      <td>Crushed stone</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>CrushedStone in COMTRADE 2017</td>
+      <td>Crushed stone in BGS</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>CrushedStone in COMTRADE 2017</td>
+      <td>CrushedStone in COMTRADE 2017</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>CrushedStone in COMTRADE 2017</td>
+      <td>CrushedStone in PRODCOM 2017</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>CrushedStone in PRODCOM 2017</td>
+      <td>Crushed stone</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>CrushedStone in PRODCOM 2017</td>
+      <td>Crushed stone in BGS</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>CrushedStone in PRODCOM 2017</td>
+      <td>CrushedStone in COMTRADE 2017</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>CrushedStone in PRODCOM 2017</td>
+      <td>CrushedStone in PRODCOM 2017</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <div class="figure align-default" id="equivalence-of-crushed-stone-with-equivalence-relation">
 <a class="reference internal image-reference" href="_images/EquivalenceAfter_relation.svg"><img alt="_images/EquivalenceAfter_relation.svg" src="_images/EquivalenceAfter_relation.svg" width="100%" /></a>
 <p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Extension of the equivalence relation.</span><a class="headerlink" href="#equivalence-of-crushed-stone-with-equivalence-relation" title="Permalink to this image">¶</a></p>
