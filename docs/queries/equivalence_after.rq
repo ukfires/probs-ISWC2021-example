@@ -1,10 +1,19 @@
 PREFIX : <https://ukfires.org/probs/ontology/>
 
-SELECT DISTINCT ?Observation ?EObjectName
+SELECT DISTINCT ?EObjectName ?Observation #?Type
 WHERE {
     ?Object :objectName "Crushed stone" ;
             :objectEquivalentTo ?EObject .
   	?EObject :objectName ?EObjectName .
     ?Observation :objectDefinedBy ?EObject .
+    #     # Direct observations
+    #     { ?DirectObservation :objectDirectlyDefinedBy ?EObject .
+    #         BIND (?DirectObservation AS ?Observation) .
+    #         BIND ("Direct" AS ?Type) }
+    # UNION
+    #     # Inferred observations
+    #     { ?InferredObservation :objectInferredDefinedBy ?EObject .
+    #         BIND (?InferredObservation AS ?Observation) .
+    #         BIND ("Inferred" AS ?Type) }
 }
 ORDER BY ?EObjectName ?Observation
