@@ -318,15 +318,31 @@ results["equivalence_after_obs3"]
 <p>We want to propagate observations among all the equivalent objects avoiding duplication.</p>
 <div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
 
-<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?Observation</span> <span class="nv">?EObjectName</span>
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?EObjectName</span> <span class="nv">?Observation</span> <span class="c">#?Type</span>
 <span class="k">WHERE</span> <span class="p">{</span>
     <span class="nv">?Object</span> <span class="p">:</span><span class="nt">objectName</span> <span class="s">&quot;Crushed stone&quot;</span> <span class="p">;</span>
             <span class="p">:</span><span class="nt">objectEquivalentTo</span> <span class="nv">?EObject</span> <span class="p">.</span>
   	<span class="nv">?EObject</span> <span class="p">:</span><span class="nt">objectName</span> <span class="nv">?EObjectName</span> <span class="p">.</span>
     <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">objectDefinedBy</span> <span class="nv">?EObject</span> <span class="p">.</span>
+    <span class="c">#     # Direct observations</span>
+    <span class="c">#     { ?DirectObservation :objectDirectlyDefinedBy ?EObject .</span>
+    <span class="c">#         BIND (?DirectObservation AS ?Observation) .</span>
+    <span class="c">#         BIND (&quot;Direct&quot; AS ?Type) }</span>
+    <span class="c"># UNION</span>
+    <span class="c">#     # Inferred observations</span>
+    <span class="c">#     { ?InferredObservation :objectInferredDefinedBy ?EObject .</span>
+    <span class="c">#         BIND (?InferredObservation AS ?Observation) .</span>
+    <span class="c">#         BIND (&quot;Inferred&quot; AS ?Type) }</span>
 <span class="p">}</span>
 <span class="k">ORDER BY</span> <span class="nv">?EObjectName</span> <span class="nv">?Observation</span>
 </pre></div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We also have additional observations inferred using composition.</p>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -353,116 +369,116 @@ results["equivalence_after_obs3"]
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Observation</th>
       <th>EObjectName</th>
+      <th>Observation</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Obs 3</td>
       <td>Crushed stone</td>
+      <td>Obs 3</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
       <td>Crushed stone</td>
+      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
       <td>Crushed stone</td>
+      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Obs 1</td>
       <td>Crushed stone</td>
+      <td>Obs 1</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Obs 2</td>
       <td>Crushed stone</td>
+      <td>Obs 2</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>Obs 3</td>
       <td>Crushed stone in BGS</td>
+      <td>Obs 3</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
       <td>Crushed stone in BGS</td>
+      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
       <td>Crushed stone in BGS</td>
+      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>Obs 1</td>
       <td>Crushed stone in BGS</td>
+      <td>Obs 1</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>Obs 2</td>
       <td>Crushed stone in BGS</td>
+      <td>Obs 2</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>Obs 3</td>
       <td>CrushedStone in COMTRADE 2017</td>
+      <td>Obs 3</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
       <td>CrushedStone in COMTRADE 2017</td>
+      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
       <td>CrushedStone in COMTRADE 2017</td>
+      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>Obs 1</td>
       <td>CrushedStone in COMTRADE 2017</td>
+      <td>Obs 1</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>Obs 2</td>
       <td>CrushedStone in COMTRADE 2017</td>
+      <td>Obs 2</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>Obs 3</td>
       <td>CrushedStone in PRODCOM 2017</td>
+      <td>Obs 3</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
       <td>CrushedStone in PRODCOM 2017</td>
+      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
       <td>CrushedStone in PRODCOM 2017</td>
+      <td>:ComposedInferredObservation-prodcom/2017/Obje...</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>Obs 1</td>
       <td>CrushedStone in PRODCOM 2017</td>
+      <td>Obs 1</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>Obs 2</td>
       <td>CrushedStone in PRODCOM 2017</td>
+      <td>Obs 2</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>[[We also have additional observations inferred using composition.]]</p>
+<!-- [[We also have additional observations inferred using composition.]] -->
 <div class="figure align-default" id="equivalence-of-crushed-stone-with-inferred-observations-via-equivalence">
 <a class="reference internal image-reference" href="_images/EquivalenceAfter.svg"><img alt="_images/EquivalenceAfter.svg" src="_images/EquivalenceAfter.svg" width="100%" /></a>
 <p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Direct and inferred (also via equivalence) observations for <code class="docutils literal notranslate"><span class="pre">Crushed</span> <span class="pre">stone</span></code>, <code class="docutils literal notranslate"><span class="pre">Crushed</span> <span class="pre">stone</span> <span class="pre">in</span> <span class="pre">PRODCOM</span></code>, and <code class="docutils literal notranslate"><span class="pre">Crushed</span> <span class="pre">stone</span> <span class="pre">in</span> <span class="pre">BGS</span></code>.</span><a class="headerlink" href="#equivalence-of-crushed-stone-with-inferred-observations-via-equivalence" title="Permalink to this image">¶</a></p>

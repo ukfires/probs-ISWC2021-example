@@ -100,11 +100,17 @@ We want to propagate observations among all the equivalent objects avoiding dupl
 :language: sparql
 ```
 
+````{margin}
+```{note}
+We also have additional observations inferred using composition.
+```
+````
+
 ```{code-cell} ipython3
 results["equivalence_after"]
 ```
 
-[[We also have additional observations inferred using composition.]]
+<!-- [[We also have additional observations inferred using composition.]] -->
 
 ```{figure} figures/EquivalenceAfter.svg
 :name: Equivalence of crushed stone with inferred observations via equivalence

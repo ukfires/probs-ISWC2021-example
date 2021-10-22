@@ -56,13 +56,19 @@ We can achieve this using the PCSC "algorithm".
 :language: sparql
 ```
 
+````{margin}
+```{note}
+We also have additional observations inferred using equivalence.
+```
+````
+
 ```{code-cell} ipython3
 results["composition_after"]
 ```
 
-[[We also have additional observations inferred using equivalence.]]
-
 <!-- [[ Since we only have the "final" data, we also get the inferred observations derived using equivalence. ]] -->
+
+<!-- [[We also have additional observations inferred using equivalence.]] -->
 
 ```{figure} figures/CompositionAfter.svg
 :name: Composition of crushed stone in BGS after applying the PCSC "algorithm"

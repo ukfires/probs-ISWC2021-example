@@ -274,11 +274,14 @@ And there is also an Observation for the whole <code class="docutils literal not
 <span class="k">WHERE</span> <span class="p">{</span>
     <span class="nv">?Object</span> <span class="p">:</span><span class="nt">objectName</span> <span class="s">&quot;Crushed stone in BGS&quot;</span> <span class="p">;</span>
             <span class="p">:</span><span class="nt">objectComposedOf</span> <span class="nv">?CObject</span> <span class="p">.</span>
-    <span class="p">{</span> <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">objectDirectlyDefinedBy</span> <span class="nv">?CObject</span> <span class="p">.</span>
-        <span class="k">BIND</span> <span class="p">(</span><span class="nv">?CObject</span> <span class="k">AS</span> <span class="nv">?OObject</span><span class="p">)</span> <span class="p">}</span>
-  <span class="k">UNION</span>
-    <span class="p">{</span> <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">objectDirectlyDefinedBy</span> <span class="nv">?Object</span> <span class="p">.</span>
-        <span class="k">BIND</span> <span class="p">(</span><span class="nv">?Object</span> <span class="k">AS</span> <span class="nv">?OObject</span><span class="p">)</span> <span class="p">}</span>
+
+        <span class="c"># Direct observations of the components of &quot;Crushed stone in BGS&quot;</span>
+        <span class="p">{</span> <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">objectDirectlyDefinedBy</span> <span class="nv">?CObject</span> <span class="p">.</span>
+            <span class="k">BIND</span> <span class="p">(</span><span class="nv">?CObject</span> <span class="k">AS</span> <span class="nv">?OObject</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">UNION</span>
+        <span class="c"># Direct observations of &quot;Crushed stone in BGS&quot;</span>
+        <span class="p">{</span> <span class="nv">?Observation</span> <span class="p">:</span><span class="nt">objectDirectlyDefinedBy</span> <span class="nv">?Object</span> <span class="p">.</span>
+            <span class="k">BIND</span> <span class="p">(</span><span class="nv">?Object</span> <span class="k">AS</span> <span class="nv">?OObject</span><span class="p">)</span> <span class="p">}</span>
 <span class="p">}</span>
 <span class="k">ORDER BY</span> <span class="nv">?Observation</span> <span class="nv">?OObject</span>
 </pre></div>
@@ -357,6 +360,13 @@ We can achieve this using the PCSC “algorithm”.</p>
 <span class="k">ORDER BY</span> <span class="nv">?Observation</span>
 </pre></div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We also have additional observations inferred using equivalence.</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;composition_after&quot;</span><span class="p">]</span>
@@ -406,8 +416,8 @@ We can achieve this using the PCSC “algorithm”.</p>
 </table>
 </div></div></div>
 </div>
-<p>[[We also have additional observations inferred using equivalence.]]</p>
 <!-- [[ Since we only have the "final" data, we also get the inferred observations derived using equivalence. ]] -->
+<!-- [[We also have additional observations inferred using equivalence.]] -->
 <div class="figure align-default" id="composition-of-crushed-stone-in-bgs-after-applying-the-pcsc-algorithm">
 <a class="reference internal image-reference" href="_images/CompositionAfter.svg"><img alt="_images/CompositionAfter.svg" src="_images/CompositionAfter.svg" width="100%" /></a>
 <p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Direct and inferred observations for the components of <code class="docutils literal notranslate"><span class="pre">Crushed</span> <span class="pre">stone</span> <span class="pre">in</span> <span class="pre">BGS</span></code>.</span><a class="headerlink" href="#composition-of-crushed-stone-in-bgs-after-applying-the-pcsc-algorithm" title="Permalink to this image">¶</a></p>
@@ -419,13 +429,13 @@ We can achieve this using the PCSC “algorithm”.</p>
 <div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="p">:</span> <span class="nl">&lt;https://ukfires.org/probs/ontology/&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">prov</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/ns/prov#&gt;</span>
 
-<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?WDF</span>
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?WasDerivedFrom</span>
 <span class="k">WHERE</span> <span class="p">{</span>
-    <span class="p">:</span><span class="nt">ComposedInferredObservation--7af16db03ac2ac2a9a773645b069b7dacffa239f5b98b9887fa4a0323b787ce7</span>
-                   <span class="nn">prov</span><span class="p">:</span><span class="nt">wasDerivedFrom</span> <span class="nv">?WDF</span> <span class="p">.</span>
-    <span class="nv">?WDF</span> <span class="k">a</span> <span class="p">:</span><span class="nt">DirectObservation</span> <span class="p">.</span>
+    <span class="p">:</span><span class="nt">ComposedInferredObservation--7af16db03ac2ac2a9a773645b069b7dacffa239f5b98b9887fa4a0323b787ce7</span> <span class="c"># IRI of &quot;Obs 3&quot;</span>
+                   <span class="nn">prov</span><span class="p">:</span><span class="nt">wasDerivedFrom</span> <span class="nv">?WasDerivedFrom</span> <span class="p">.</span>
+    <span class="nv">?WasDerivedFrom</span> <span class="k">a</span> <span class="p">:</span><span class="nt">DirectObservation</span> <span class="p">.</span>
 <span class="p">}</span>
-<span class="k">ORDER BY</span> <span class="nv">?WDF</span>
+<span class="k">ORDER BY</span> <span class="nv">?WasDerivedFrom</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -453,7 +463,7 @@ We can achieve this using the PCSC “algorithm”.</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>WDF</th>
+      <th>WasDerivedFrom</th>
     </tr>
   </thead>
   <tbody>
