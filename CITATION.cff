@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Germano"
+  given-names: "Stefano"
+  orcid: "https://orcid.org/0000-0001-6993-0618"
+- family-names: "Saunders"
+  given-names: "Carla"
+  orcid: "https://orcid.org/0000-0001-6699-2848"
+- family-names: "Horrocks"
+  given-names: "Ian"
+  orcid: "https://orcid.org/0000-0002-2685-7462"
+- family-names: "Lupton"
+  given-names: "Rick"
+  orcid: "https://orcid.org/0000-0001-8622-3085"
+title: "Example application of the PRObs ontology for ISWC 2021"
+version: 1.0
+doi: 10.5281/zenodo.5052758
+date-released: 2021-04-26
+url: "https://github.com/ukfires/probs-ISWC2021-example"
