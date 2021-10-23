@@ -23,6 +23,8 @@ You only need to run:
 poetry install
 ```
 
+This will set up a Python virtual environment with the necessary dependencies. To use this Python environment, either activate it using [`poetry shell`](https://python-poetry.org/docs/cli/#shell), or prefix all the commmands below with [`poetry run`](https://python-poetry.org/docs/cli/#run).
+
 ### Conversion
 
 You need to convert the data only if you modified the mapping. Otherwise, go to the [Reasoning](#reasoning) section.
@@ -35,7 +37,7 @@ doit run conversion
 
 This will add all the data sources and mappings to RDFox, apply rules, and save `data/probs_data.nt.gz`. It does this via the `probs-ontology` package; if this has been installed in editable mode (as specified in `pyproject.toml`, or with the `-e` option to `pip`) then any changes made within `probs-ontology` to the scripts will be picked up here, but you may need to force doit to rerun using the `doit run -as conversion` option.
 
-This process takes place within the `_rdfox_working/conversion` folder, where a temporary set of scripts is assembled.
+This process takes place within the `_rdfox_working/conversion` folder, where a temporary set of scripts is assembled. You can show all the output from RDFox by setting the `PROBS_DEBUG` environment variable when running this command.
 
 ### Reasoning
 

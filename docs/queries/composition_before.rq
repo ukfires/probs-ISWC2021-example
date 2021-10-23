@@ -1,0 +1,16 @@
+PREFIX : <https://ukfires.org/probs/ontology/>
+
+SELECT DISTINCT ?Observation ?OObject
+WHERE {
+    ?Object :objectName "Crushed stone in BGS" ;
+            :objectComposedOf ?CObject .
+
+        # Direct observations of the components of "Crushed stone in BGS"
+        { ?Observation :objectDirectlyDefinedBy ?CObject .
+            BIND (?CObject AS ?OObject) }
+    UNION
+        # Direct observations of "Crushed stone in BGS"
+        { ?Observation :objectDirectlyDefinedBy ?Object .
+            BIND (?Object AS ?OObject) }
+}
+ORDER BY ?Observation ?OObject

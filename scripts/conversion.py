@@ -5,8 +5,7 @@ import sys
 from pathlib import Path
 import shutil
 
-from probs_ontology import load_datasource, Datasource
-from probs_ontology.runner.probs_runner import probs_convert_data
+from probs_runner import load_datasource, Datasource, probs_convert_data
 
 import logging
 

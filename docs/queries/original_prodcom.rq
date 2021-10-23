@@ -1,11 +1,19 @@
 PREFIX : <https://ukfires.org/probs/ontology/>
 PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX quantitykind: <http://qudt.org/vocab/quantitykind/>
+PREFIX ufpc: <https://ukfires.org/probs/ontology/prodcom/>
 
-SELECT DISTINCT ?Object ?Year ?Value
+SELECT DISTINCT ?ObjectName ?Role ?Value ?Dataset ?Year ?Region ?Metric
 WHERE {
-  ?Observation :objectDefinedBy [ :objectName ?Object ] ;
-               :hasTimePeriod [ time:year ?Year ] ;
-               :measurement ?Value .
-  FILTER( ?Object = "PRODCOM Object from Code 08121210" )
+    ?Object :objectName ?ObjectName ;
+        :hasClassificationCode [ :codeName "08121230" ] .
+    ?Observation :objectDefinedBy ?Object ;
+        :hasTimePeriod [ time:unitType time:unitYear ; time:year ?Year ] ;
+        :hasRegion [ gn:name ?Region] ;
+        :hasRole ?Role ;
+        :partOfDataset ?Dataset ;
+        :metric ?Metric ;
+        :measurement ?Value .
 }
 ORDER BY ?Object ?Year

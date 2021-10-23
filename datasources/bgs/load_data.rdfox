@@ -13,14 +13,16 @@ dsource register delimitedFile "BGS_Aggregates_2015"            \
 
 tupletable create ufrd:BGS_Aggregates_2015                      \
     dataSourceName  "BGS_Aggregates_2015"                       \
-    "columns"       3                                           \
+    "columns"       4                                           \
     "1"             "{Year}"                                    \
     "1.datatype"    "string"                                    \
     "2"             "{Object}"                                  \
     "2.datatype"    "string"                                    \
     "3"             "{Value} "                                  \
     "3.datatype"    "xsd:decimal"                               \
-    "3.if-empty"    "absent"
+    "3.if-empty"    "absent"                                    \
+    "4"             "{ObjectName}"                              \
+    "4.datatype"    "string"                                    
 
 # 1 This is the year (time period)
 # 2 This is the object name
@@ -32,3 +34,11 @@ tupletable create ufrd:BGS_Aggregates_2015                      \
 
 import ! sys:BGSCrushedStone :objectEquivalentTo sys:CrushedStone .
 import ! sys:BGSSandAndGravel :objectEquivalentTo sys:SandAndGravel .
+
+######################################################
+###          Composition                           ###
+######################################################
+
+import ! sys:BGSCrushedStone :objectComposedOf sys:BGSLimestoneAndDolomite .
+import ! sys:BGSCrushedStone :objectComposedOf sys:BGSIgneousRock .
+import ! sys:BGSCrushedStone :objectComposedOf sys:BGSSandstone .

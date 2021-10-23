@@ -1,0 +1,6 @@
+PREFIX : <https://ukfires.org/probs/ontology/>
+
+SELECT DISTINCT ?Object
+WHERE {
+    ?Object a :ReferenceObject .
+}

@@ -1,13 +1,17 @@
 PREFIX : <https://ukfires.org/probs/ontology/>
-PREFIX ufpc: <https://ukfires.org/probs/ontology/prodcom/>
 PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX quantitykind: <http://qudt.org/vocab/quantitykind/>
+PREFIX ufpc: <https://ukfires.org/probs/ontology/prodcom/>
 
-SELECT ?Object ?Year ?Value
+SELECT DISTINCT ?ObjectName ?Role ?Value ?Year ?Region ?Metric
 WHERE {
-  ?Observation :partOfDataset ufpc:BGSMineralsYearbook2015 ;
-               :objectDefinedBy [ :objectName ?Object ] ;
-               :hasTimePeriod [ time:year ?Year ] ;
-               :measurement ?Value .
-  FILTER( STRENDS(?Object, "in BGS") )
+    ?Observation :partOfDataset ufpc:BGSMineralsYearbook2015 ;
+        :objectDirectlyDefinedBy [ :objectName ?ObjectName ] ;
+        :hasTimePeriod [ time:unitType time:unitYear ; time:year ?Year ] ;
+        :hasRegion [ gn:name ?Region] ;
+        :hasRole ?Role ;
+        :metric ?Metric ;
+        :measurement ?Value .
 }
 ORDER BY ?Object ?Year
