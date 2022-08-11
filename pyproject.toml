@@ -6,7 +6,7 @@ authors = ["Rick Lupton <mail@ricklupton.name>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-doit = "~=0.33.1"
+doit = "~=0.36.0"
 pandas = "~=1.2.0"
 jupyter-book = "~=0.10.1"
 pytest = "~=6.2.1"
