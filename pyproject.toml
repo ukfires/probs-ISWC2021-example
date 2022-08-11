@@ -10,7 +10,7 @@ doit = "~=0.33.1"
 pandas = "~=1.2.0"
 jupyter-book = "~=0.10.1"
 pytest = "~=6.2.1"
-sphinx-probs-rdf = "~=0.1.5"
+sphinx-probs-rdf = "~=0.2.0"
 jupytext = {version = "~=1.10.3", extras = ["myst"]}
 probs_ontology = {version = "~=1.5.2"}
 probs-runner = "^1.0.0"
